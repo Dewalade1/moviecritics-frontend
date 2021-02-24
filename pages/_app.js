@@ -1,7 +1,9 @@
 import '../styles/globals.css'
+import { init } from "../utils/sentry";
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+init();
+
+export default function MyApp({ Component, pageProps, err }) {
+  // Workaround for https://github.com/vercel/next.js/issues/8592
+  return <Component {...pageProps} err={err} />;
 }
-
-export default MyApp
