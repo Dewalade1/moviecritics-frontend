@@ -1,10 +1,9 @@
 import Head from 'next/head';
+import Layout from '../layouts/layout';
 
 
 export default function Home() {
   return (
-    <div>
-      Hello World
-    </div>
+    <Layout home></Layout>
   )
 }
