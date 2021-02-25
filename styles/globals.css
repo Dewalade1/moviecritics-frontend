@@ -6,11 +6,48 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --light-green: #EFFDFB;
+  --regular-green: #6ADAB0;
+  --dark-green: #0E7059;
+  --yellow: #F6C96E;
+  --brown: #9C8A7D;
+  --red: #C2383F;
+  --white: #FFFFFF;
+  --black: #000000;
+  --off-white: #F2F2F2;
+
+  --tx-gray1: #333333;
+  --tx-gray2: #4F4F4F;
+
+  --font-48: 48px;
+
+  --pd-top: 2em 6.9em;
+  --pd-md: 3em 5.5em;
+}
 a {
   color: inherit;
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+
+/* HOME PAGE */
+.movie-header-wrapper {
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+  padding: var(--pd-top);
+  padding-top: 1em;
+  padding-bottom: 1em;
+  background-color: var(--light-green);
 }
+
+.movie-header-wrapper > div > a > img{
+  width:106px;
+ }
