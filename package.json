@@ -21,7 +21,16 @@
     "next": "10.0.7",
     "popper.js": "^1.16.1",
     "react": "17.0.1",
+<<<<<<< HEAD
     "react-bootstrap": "^1.5.0",
     "react-dom": "17.0.1"
+||||||| 930eb75
+    "react-dom": "17.0.1"
+=======
+    "react-bootstrap": "^1.5.0",
+    "react-dom": "17.0.1",
+    "react-redux": "^7.2.2",
+    "redux": "^4.0.5"
+>>>>>>> 4f5417d7460b1350fa3a229a3a716f1663c0c982
   }
 }
