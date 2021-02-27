@@ -49,65 +49,82 @@ export default function MainNav () {
 
     return (
       <>
-          <Navbar.Brand href="#home">
-            <div className="ml-sm-6">
-              <img src="/images/logos/moviecritics-logo-white-background.png" width={140} height={40} className="d-inline-block align-top" />
-            </div>
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
-          <div>
-
-        <div>
-          <Button onClick={toggleDrawer('left', true)}> <MenuRoundedIcon/> Menu</Button>
-          <Drawer anchor={'left'} open={state['left']} onClose={toggleDrawer('left', false)}>
-             <div className={clsx(classes.list)} role="presentation" onClick={toggleDrawer('left', false)} onKeyDown={toggleDrawer('left', false)}>
-            <List>
-                <ListItem>
-                    <ListItemText primary=" " />
-                </ListItem>
-                <ListItem>
-                    <ListItemText primary="Menu" />
-                </ListItem>
-                <ListItem button>
-                    <ListItemIcon><HomeRoundedIcon /></ListItemIcon>
-                    <ListItemText primary="Home" />
-                </ListItem>
-                <ListItem button>
-                    <ListItemIcon><TheatersRoundedIcon /></ListItemIcon>
-                    <ListItemText primary="Movies" />
-                </ListItem>
-                <ListItem button>
-                    <ListItemIcon><PeopleRoundedIcon /></ListItemIcon>
-                    <ListItemText primary="Celebs" />
-                </ListItem>
-                <ListItem button>
-                    <ListItemIcon><InfoRoundedIcon /></ListItemIcon>
-                    <ListItemText primary="About Us" />
-                </ListItem>
-            </List>
-            <Divider />
-            <List>
-                <ListItem>
-                    <ListItemText primary="Apps" />
-                </ListItem>
-                <ListItem button>
-                    <ListItemIcon><PhoneIphoneRoundedIcon /></ListItemIcon>
-                    <ListItemText primary="Mobile Apps" />
-                </ListItem>
-                <ListItem button>
-                    <ListItemIcon><DesktopWindowsRoundedIcon /></ListItemIcon>
-                    <ListItemText primary="Desktop App" />
-                </ListItem>
-            </List>
-            </div>
-          </Drawer>
+        <Navbar.Brand href="#home">
+          <div className="ml-sm-6">
+            <img src="/images/logos/moviecritics-logo-white-background.png" width={140} height={40} className="d-inline-block align-top" />
           </div>
-    </div>
-            </Nav>
-          </Navbar.Collapse>
-            
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="mr-auto">
+            <div>
+              <div>
+                <Button onClick={toggleDrawer("left", true)}>
+                  {" "}
+                  <MenuRoundedIcon /> Menu
+                </Button>
+                <Drawer anchor={"left"} open={state["left"]} onClose={toggleDrawer("left", false)}>
+                  <div className={clsx(classes.list)} role="presentation" onClick={toggleDrawer("left", false)} onKeyDown={toggleDrawer("left", false)}>
+                    <List>
+                      <ListItem>{" "} </ListItem>
+                      <ListItem>
+                        <div className="ml-sm-6">
+                          <img src="/images/logos/moviecritics-logo-white-background.png" width={140} height={40} className="d-inline-block align-top" />
+                        </div>
+                      </ListItem>
+                      <ListItem>{" "} </ListItem>
+                      <ListItem>
+                        <ListItemText primary="Menu" />
+                      </ListItem>
+                      <ListItem button>
+                        <ListItemIcon>
+                          <HomeRoundedIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Home" />
+                      </ListItem>
+                      <ListItem button>
+                        <ListItemIcon>
+                          <TheatersRoundedIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Movies" />
+                      </ListItem>
+                      <ListItem button>
+                        <ListItemIcon>
+                          <PeopleRoundedIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Celebs" />
+                      </ListItem>
+                      <ListItem button>
+                        <ListItemIcon>
+                          <InfoRoundedIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="About Us" />
+                      </ListItem>
+                    </List>
+                    <Divider />
+                    <List>
+                      <ListItem>
+                        <ListItemText primary="Apps" />
+                      </ListItem>
+                      <ListItem button>
+                        <ListItemIcon>
+                          <PhoneIphoneRoundedIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Mobile Apps" />
+                      </ListItem>
+                      <ListItem button>
+                        <ListItemIcon>
+                          <DesktopWindowsRoundedIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Desktop Apps" />
+                      </ListItem>
+                    </List>
+                  </div>
+                </Drawer>
+              </div>
+            </div>
+          </Nav>
+        </Navbar.Collapse>
       </>
     );
 }
