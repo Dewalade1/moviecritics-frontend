@@ -5,6 +5,8 @@ import Link from 'next/Link';
 import { FormControl } from "react-bootstrap";
 import { Container, Row, Col } from "react-bootstrap";
 
+import GoogleLoginBtn from '../shared/logins/googleLogin.js'
+
 import Button from "@material-ui/core/Button";
 import Dialog from '@material-ui/core/Dialog';
 import TextField from '@material-ui/core/TextField';
@@ -278,6 +280,7 @@ const Footer = () => {
                           To subscribe to this website, please enter your email address here. We will send updates
                           occasionally.
                         </DialogContentText>
+                         <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
                         <TextField
                           autoFocus
                           variant="outlined"
@@ -287,6 +290,7 @@ const Footer = () => {
                           type="email"
                           fullWidth
                         />
+                        <GoogleLoginBtn/>
                       </DialogContent>
                       <DialogActions>
                       <Button onClick={handleClose} color="primary">
