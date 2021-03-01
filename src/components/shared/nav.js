@@ -1,9 +1,10 @@
 import clsx from 'clsx';
 
+import Link from 'next/Link';
+
 import React, {useState} from 'react';
 
-import {Navbar, NavDropdown, Nav} from 'react-bootstrap';
-import {Form, FormControl, InputGroup } from 'react-bootstrap';
+import {Navbar, Nav} from 'react-bootstrap';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
@@ -50,12 +51,11 @@ export default function MainNav () {
     return (
       <>
         <Navbar.Brand href="#home">
-          <div className="ml-sm-6">
+          <div className="ml-4 pl-4">
             <img src="/images/logos/moviecritics-logo-white-background.png" width={140} height={40} className="d-inline-block align-top" />
           </div>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
             <div>
               <div>
@@ -69,7 +69,11 @@ export default function MainNav () {
                       <ListItem>{" "} </ListItem>
                       <ListItem>
                         <div className="ml-sm-6">
-                          <img src="/images/logos/moviecritics-logo-white-background.png" width={140} height={40} className="d-inline-block align-top" />
+                          <Link href="#home">
+                            <a>
+                              <img src="/images/logos/moviecritics-logo-white-background.png" width={140} height={40} className="d-inline-block align-top" />
+                            </a>
+                          </Link>
                         </div>
                       </ListItem>
                       <ListItem>{" "} </ListItem>
@@ -124,7 +128,6 @@ export default function MainNav () {
               </div>
             </div>
           </Nav>
-        </Navbar.Collapse>
       </>
     );
 }

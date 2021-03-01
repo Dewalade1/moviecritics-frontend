@@ -3,164 +3,112 @@ import {useState} from 'react';
 import MainNav from '../shared/nav';
 
 import {Navbar} from 'react-bootstrap';
-import {Form, FormControl, InputGroup } from 'react-bootstrap';
+import {Form, FormControl, InputGroup, Col } from 'react-bootstrap';
 
-import Button from "@material-ui/core/Button";
-import { fade, makeStyles, withStyles } from '@material-ui/core/styles';
 import Menu from "@material-ui/core/Menu";
 import Badge from "@material-ui/core/Badge";
+import Button from "@material-ui/core/Button";
 import Divider from "@material-ui/core/Divider";
 import MenuItem from "@material-ui/core/MenuItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
 import InputBase from '@material-ui/core/InputBase';
+import TextField from '@material-ui/core/TextField';
+import grey from '@material-ui/core/colors/grey';
 import IconButton from "@material-ui/core/IconButton";
+import InputAdornment from '@material-ui/core/InputAdornment';
+import { fade, makeStyles, withStyles, createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+
+import Select from '@material-ui/core/Select';
+import InputLabel from '@material-ui/core/InputLabel';
+import FormHelperText from '@material-ui/core/FormHelperText';
 
 import SearchRoundedIcon from '@material-ui/icons/SearchRounded';
 import TurnedInNotRoundedIcon from '@material-ui/icons/TurnedInNotRounded';
 import NotificationsRoundedIcon from "@material-ui/icons/NotificationsRounded";
 
-const useStyles = makeStyles((theme) => ({
-  grow: {
-    flexGrow: 1,
+const theme = createMuiTheme({
+  palette: {
+    primary: grey,
   },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    display: 'none',
-    [theme.breakpoints.up('sm')]: {
-      display: 'block',
+});
+
+
+const BootstrapInput = withStyles((theme) => ({
+  root: {
+    'label + &': {
+      marginTop: theme.spacing(3),
     },
   },
-  search: {
+  input: {
     position: 'relative',
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
+    backgroundColor: theme.palette.background.paper,
+    border: '1px solid #ffffff',
+    borderRight: '1px solid #d3d3d3',
+    fontSize: 16,
+    padding: '10px 26px 10px 12px',
+    transition: theme.transitions.create(['border-color', 'box-shadow']),
+
     '&:hover': {
-      backgroundColor: fade(theme.palette.common.white, 0.25),
-    },
-    marginRight: theme.spacing(2),
-    marginLeft: 0,
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(3),
-      width: 'auto',
+      borderColor: '#ffffff',
+      borderRight: '1px solid #A9A9A9',
     },
   },
-  searchIcon: {
-    padding: theme.spacing(0, 2),
-    height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+}))(InputBase);
+
+const useStyles = makeStyles((theme) => ({
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 120,
   },
-  inputRoot: {
-    color: 'inherit',
-  },
-  inputInput: {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('md')]: {
-      width: '20ch',
-    },
-  },
-  sectionDesktop: {
-    display: 'none',
-    [theme.breakpoints.up('md')]: {
-      display: 'flex',
-    },
-  },
-  sectionMobile: {
-    display: 'flex',
-    [theme.breakpoints.up('md')]: {
-      display: 'none',
-    },
+  selectEmpty: {
+    marginTop: theme.spacing(2),
   },
 }));
 
-
-//
-const StyledMenu = withStyles({
-  paper: {
-    border: "1px solid #d3d4d5",
-  },
-})((props) => (
-  <Menu
-    elevation={0}
-    getContentAnchorEl={null}
-    anchorOrigin={{
-      vertical: "bottom",
-      horizontal: "center",
-    }}
-    transformOrigin={{
-      vertical: "top",
-      horizontal: "center",
-    }}
-    {...props}
-  />
-));
-
-const StyledMenuItem = withStyles((theme) => ({
-  root: {
-    "&:focus": {
-      backgroundColor: theme.palette.primary.main,
-      "& .MuiListItemIcon-root, & .MuiListItemText-primary": {
-        color: theme.palette.common.white,
-      },
-    },
-  },
-}))(MenuItem);
-
 function Header () {
 
-     const classes = useStyles();
-    const [anchor, setAnchor] = useState(null);
+    const classes = useStyles();
+  const [searchParam, setSearchParam] = useState(10);
 
-    const handleClick = (event) => {
-      setAnchor(event.currentTarget);
-    };
+  const handleChange = (event) => {
+    setSearchParam(event.target.value);
+  };
 
-    const handleClose = () => {
-      setAnchor(null);
-    };
 
     return (
       <>
         <Navbar className="bg-light justify-content-between pr-4 pl-4" expand="lg" variant="light">
           <MainNav />
-          <Form inline>
-            <InputGroup>
-              <InputGroup.Prepend>
-                <InputGroup.Text id="basic-addon1" onClick={handleClick}>
-                  All
-                </InputGroup.Text>
-              </InputGroup.Prepend>
-              <div className={classes.search}>
-                <InputBase
-                  placeholder="Search…"
-                  classes={{
-                    root: classes.inputRoot,
-                    input: classes.inputInput,
-                  }}
-                  inputProps={{ "aria-label": "search" }}
-                />
-                <div className={classes.searchIcon}>
-                  <SearchRoundedIcon inline />
-                </div>
-              </div>
-              {/* <FormControl placeholder="Search..." aria-label="Search" aria-describedby="basic-addon1" className="mr-sm-2" />
-                <InputGroup.Prepend>
-                <InputGroup.Text id="basic-addon2" onClick={handleClick}><SearchRoundedIcon/></InputGroup.Text>
-                </InputGroup.Prepend> */}
-              {/* <Button variant="contained"  style={{background: "#FF8C00"}} color="primary" component="span">Search</Button> */}
-            </InputGroup>
-          </Form>
+          <Col>
+            <ThemeProvider theme={theme}>
+          <TextField
+            margin="dense" 
+            id="search" 
+            placeholder="Search Moviecritics..." 
+            type="text" 
+            InputProps={{
+            startAdornment: <InputAdornment position="start" >
+              <Select
+                id="simple-select-outlined"
+                value={searchParam}
+                onChange={handleChange}
+                input={<BootstrapInput />}
+              >
+                <MenuItem value={10}>All</MenuItem>
+                <MenuItem value={20}>Movies</MenuItem>
+                <MenuItem value={30}>Celebs</MenuItem>
+                <MenuItem value={40}>Users</MenuItem>
+              </Select>
+               <Divider orientation="vertical" />
+            </InputAdornment>,
+            endAdornment: <InputAdornment position="end">
+                            <SearchRoundedIcon/>
+                          </InputAdornment>,
+          }} 
+          variant="outlined" 
+          fullWidth/>
+          </ThemeProvider>
+        </Col>
+
           <IconButton aria-label="notifications" component="span" className="ml-2 mr-2">
             <Badge badgeContent={9} color="error">
               <NotificationsRoundedIcon />
