@@ -279,17 +279,63 @@ const Footer = () => {
                       Sign Up
                     </DialogTitle>
                     <DialogContent dividers>
-                      <AppleLoginBtn/>
-                      <GoogleLoginBtn/>
-                      <FacebookLoginBtn/>
-                      <TwitterLoginBtn/>
+                      <Col>
+                        <AppleLoginBtn/>
+                        <GoogleLoginBtn/>
+                        <FacebookLoginBtn/>
+                        <TwitterLoginBtn/>
+                      </Col>
                       </DialogContent>
                       <DialogContent dividers>
                         <DialogContentText>
                           Or enter your details below:
                         </DialogContentText>
                          <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-                        
+                         <Col>
+                         <Row>
+                         <Col> 
+                         <TextField
+                          autoFocus
+                          variant="outlined"
+                          margin="dense"
+                          id="first name"
+                          label="First Name"
+                          type="text"
+                          fullWidth
+                        />
+                        </Col>
+                        <Col> 
+                        <TextField
+                          variant="outlined"
+                          margin="dense"
+                          id="last name"
+                          label="Last Name"
+                          type="text"
+                          fullWidth
+                        />
+                        </Col>
+                        </Row>
+                        </Col>
+                        <Col>
+                        <TextField
+                          variant="outlined"
+                          margin="dense"
+                          id="email"
+                          label="Email Address"
+                          type="email"
+                          fullWidth
+                        />
+                        </Col>
+                        <Col>
+                        <TextField
+                          type="password"
+                          variant="outlined"
+                          margin="dense"
+                          id="password"
+                          label="Password"
+                          fullWidth
+                        />
+                        </Col>
                       </DialogContent>
                       <DialogActions>
                       <Button onClick={handleClose} color="primary">
