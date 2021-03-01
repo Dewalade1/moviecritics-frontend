@@ -5,6 +5,7 @@ import Link from 'next/Link';
 import { FormControl } from "react-bootstrap";
 import { Container, Row, Col } from "react-bootstrap";
 
+import AppleLoginBtn from '../shared/logins/appleLogin'
 import GoogleLoginBtn from '../shared/logins/googleLogin'
 import FacebookLoginBtn from '../shared/logins/facebookLogin'
 import TwitterLoginBtn from '../shared/logins/twitterLogin'
@@ -278,23 +279,17 @@ const Footer = () => {
                       Sign Up
                     </DialogTitle>
                     <DialogContent dividers>
+                      <AppleLoginBtn/>
+                      <GoogleLoginBtn/>
+                      <FacebookLoginBtn/>
+                      <TwitterLoginBtn/>
+                      </DialogContent>
+                      <DialogContent dividers>
                         <DialogContentText>
-                          To subscribe to this website, please enter your email address here. We will send updates
-                          occasionally.
+                          Or enter your details below:
                         </DialogContentText>
                          <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-                        <TextField
-                          autoFocus
-                          variant="outlined"
-                          margin="dense"
-                          id="name"
-                          label="Email Address"
-                          type="email"
-                          fullWidth
-                        />
-                        <GoogleLoginBtn/>
-                        <FacebookLoginBtn/>
-                        <TwitterLoginBtn/>
+                        
                       </DialogContent>
                       <DialogActions>
                       <Button onClick={handleClose} color="primary">
@@ -303,7 +298,7 @@ const Footer = () => {
                       <Button onClick={handleClose} color="primary">
                         Subscribe
                       </Button>
-                  </DialogActions>
+                    </DialogActions>
                   </Dialog>
                 </div>
               </Col>
