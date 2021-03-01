@@ -5,7 +5,8 @@ import Link from 'next/Link';
 import { FormControl } from "react-bootstrap";
 import { Container, Row, Col } from "react-bootstrap";
 
-import GoogleLoginBtn from '../shared/logins/googleLogin.js'
+import GoogleLoginBtn from '../shared/logins/googleLogin'
+import FacebookLoginBtn from '../shared/logins/facebookLogin'
 
 import Button from "@material-ui/core/Button";
 import Dialog from '@material-ui/core/Dialog';
@@ -85,22 +86,22 @@ const Footer = () => {
             <Col md="2" className="text-left mt-4 pt-2">
               <ul>
                 <li className="list-unstyled text-decoration-none">
-                  <Link href="#!">
+                  <Link href="/privacy-policy">
                     <a style={{ color: "#ffffff" }}>Privacy Policy</a>
                   </Link>
                 </li>
                 <li className="list-unstyled text-decoration-none">
-                  <Link href="#!">
+                  <Link href="/terms">
                     <a style={{ color: "#ffffff" }}>Terms</a>
                   </Link>
                 </li>
                 <li className="list-unstyled text-decoration-none">
-                  <Link href="#!">
+                  <Link href="/help">
                     <a style={{ color: "#ffffff" }}>Help</a>
                   </Link>
                 </li>
                 <li className="list-unstyled text-decoration-none">
-                  <Link href="#!">
+                  <Link href="/contacts">
                     <a style={{ color: "#ffffff" }}>Contact Us</a>
                   </Link>
                 </li>
@@ -112,22 +113,22 @@ const Footer = () => {
               </h6>
               <ul>
                 <li className="list-unstyled text-decoration-none">
-                  <Link href="#!">
+                  <Link href="/">
                     <a style={{ color: "#ffffff" }}>Home</a>
                   </Link>
                 </li>
                 <li className="list-unstyled text-decoration-none">
-                  <Link href="#!">
+                  <Link href="/about-us">
                     <a style={{ color: "#ffffff" }}>About Us</a>
                   </Link>
                 </li>
                 <li className="list-unstyled text-decoration-none">
-                  <Link href="#!">
-                    <a style={{ color: "#ffffff" }}>Actors</a>
+                  <Link href="/celebs/celebs">
+                    <a style={{ color: "#ffffff" }}>Celebs</a>
                   </Link>
                 </li>
                 <li className="list-unstyled text-decoration-none">
-                  <Link href="#!">
+                  <Link href="/genre">
                     <a style={{ color: "#ffffff" }}>Genres</a>
                   </Link>
                 </li>
@@ -139,17 +140,17 @@ const Footer = () => {
               </h6>
               <ul>
                 <li className="list-unstyled text-decoration-none">
-                  <Link href="#!">
+                  <Link href="/app/android">
                     <a style={{ color: "#ffffff" }}>Android App</a>
                   </Link>
                 </li>
                 <li className="list-unstyled text-decoration-none">
-                  <Link href="#!">
+                  <Link href="/app/ios">
                     <a style={{ color: "#ffffff" }}>Ios App</a>
                   </Link>
                 </li>
                 <li className="list-unstyled text-decoration-none">
-                  <Link href="#!">
+                  <Link href="/app/desktop">
                     <a style={{ color: "#ffffff" }}>Desktop Apps</a>
                   </Link>
                 </li>
@@ -162,17 +163,17 @@ const Footer = () => {
               </h6>
               <ul>
                 <li className="list-unstyled text-decoration-none">
-                  <Link href="#!">
+                  <Link href="/tops/movies">
                     <a style={{ color: "#ffffff" }}>Top Movies</a>
                   </Link>
                 </li>
                 <li className="list-unstyled text-decoration-none">
-                  <Link href="#!">
+                  <Link href="/tops/celebs">
                     <a style={{ color: "#ffffff" }}>Top Celebs</a>
                   </Link>
                 </li>
                 <li className="list-unstyled text-decoration-none">
-                  <Link href="#!">
+                  <Link href="/tops/genres">
                     <a style={{ color: "#ffffff" }}>Top Genres</a>
                   </Link>
                 </li>
@@ -185,27 +186,27 @@ const Footer = () => {
               </h6>
               <ul>
                 <li className="list-unstyled text-decoration-none">
-                  <Link href="#!">
+                  <Link href="/movies/yoruba">
                     <a style={{ color: "#ffffff" }}>Yoruba</a>
                   </Link>
                 </li>
                 <li className="list-unstyled text-decoration-none">
-                  <Link href="#!">
+                  <Link href="/movies/igbo">
                     <a style={{ color: "#ffffff" }}>Igbo</a>
                   </Link>
                 </li>
                 <li className="list-unstyled text-decoration-none">
-                  <Link href="#!">
+                  <Link href="/movies/hausa">
                     <a style={{ color: "#ffffff" }}>Hausa</a>
                   </Link>
                 </li>
                 <li className="list-unstyled text-decoration-none">
-                  <Link href="#!">
+                  <Link href="/movies/christian">
                     <a style={{ color: "#ffffff" }}>Christian</a>
                   </Link>
                 </li>
                 <li className="list-unstyled text-decoration-none">
-                  <Link href="#!">
+                  <Link href="/movies/islamic">
                     <a style={{ color: "#ffffff" }}>Islamic</a>
                   </Link>
                 </li>
@@ -291,6 +292,7 @@ const Footer = () => {
                           fullWidth
                         />
                         <GoogleLoginBtn/>
+                        <FacebookLoginBtn/>
                       </DialogContent>
                       <DialogActions>
                       <Button onClick={handleClose} color="primary">
