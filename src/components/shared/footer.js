@@ -7,6 +7,7 @@ import { Container, Row, Col } from "react-bootstrap";
 
 import GoogleLoginBtn from '../shared/logins/googleLogin'
 import FacebookLoginBtn from '../shared/logins/facebookLogin'
+import TwitterLoginBtn from '../shared/logins/twitterLogin'
 
 import Button from "@material-ui/core/Button";
 import Dialog from '@material-ui/core/Dialog';
@@ -293,6 +294,7 @@ const Footer = () => {
                         />
                         <GoogleLoginBtn/>
                         <FacebookLoginBtn/>
+                        <TwitterLoginBtn/>
                       </DialogContent>
                       <DialogActions>
                       <Button onClick={handleClose} color="primary">
