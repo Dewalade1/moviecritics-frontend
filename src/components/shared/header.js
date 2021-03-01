@@ -76,7 +76,7 @@ function Header () {
 
     return (
       <>
-        <Navbar className="bg-light justify-content-between pr-4 pl-4" expand="lg" variant="light">
+        <Navbar className="bg-light justify-content-between pr-4 pl-4" expand="lg" variant="light" fixed="top">
           <MainNav />
           <Col>
             <ThemeProvider theme={theme}>

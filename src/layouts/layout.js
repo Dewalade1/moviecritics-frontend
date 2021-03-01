@@ -20,8 +20,10 @@ export default function Layout({ children }) {
         <link rel="stylesheet" href="/css/bootstrap.min.css" />
       </Head>
 
-      <Header fixed="top"/>
-      <main>{children}</main>
+      <Header />
+      <div className="ml-4 pl-4 mr-4 pr-4 mt-lg-4 pt-4">
+        <main className="ml-4 pl-4 mr-4 pr-4 mt-lg-4 pt-4">{children}</main>
+       </div>
       <Footer />
     </>
   );
