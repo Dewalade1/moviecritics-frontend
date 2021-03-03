@@ -265,8 +265,8 @@ const Footer = () => {
           <Container fluid>
             <Row>
               <Col>
-                <div inline>
-                  <FormControl inline fullWidth type="text" placeholder="Sign up for our Newsletter..." className="mr-1" />
+                <div inline="true">
+                  <FormControl inline="true" type="text" placeholder="Sign up for our Newsletter..." className="mr-1" />
                 </div>
               </Col>
               <Col className="text-left">
