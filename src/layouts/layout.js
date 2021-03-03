@@ -12,7 +12,7 @@ export default function Layout({ children }) {
         <meta name="description" content="@@page-discription" />
 
         <link rel="shortcut icon" href="./images/favicon.png" />
-        <title>MovieCritics | Landing page</title>
+        <title>Home | MovieCritics</title>
         <link rel="icon" href="/images/logos/moviecritics-flavicon.ico" />
 
         <link rel="preconnect" href="https://fonts.gstatic.com" />
