@@ -4,6 +4,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 import Layout from '../../layouts/layout';
+import MyCarousel from '../../../src/components/carousel';
 
 import { Container, Row, Col } from "react-bootstrap";
 
@@ -52,13 +53,7 @@ export default function Home() {
         title="Ramsey Noah"
         subheader="Actor | Director | Producer"
       />
-        <CardMedia key={0}
-          component="img"
-          alt="Ramsey Noah"
-          height="500"
-          image="/images/celebs/Ramsey-Noah/ramson-bckd.jpg"
-          title="Ramsey Nouah"
-        />
+        <MyCarousel/>
         <CardContent>
           <Typography gutterBottom variant="h4" component="h2">
             Bio
@@ -127,9 +122,8 @@ export default function Home() {
         <Card>
       <CardContent>
         <CardHeader title="Related Celebrities" />
-        <Divider flexItem style={{color:"#000000"}} className="mb-2"/>
+        <Divider flexItem style={{color:"#000000"}}/>
         <Typography variant="body2" color="textSecondary" component="p">
-            <ul>
                 <li className="list-unstyled text-decoration-none">
                   <Link href="/">
                     <a style={{ color: "#ffffff" }}>Home</a>
@@ -145,12 +139,9 @@ export default function Home() {
                     <a style={{ color: "#ffffff" }}>Celebs</a>
                   </Link>
                 </li>
-                <li className="list-unstyled text-decoration-none">
-                  <Link href="/genre">
-                    <a style={{ color: "#ffffff" }}>Genres</a>
-                  </Link>
-                </li>
-              </ul>
+                <p className="ml-4">
+                    Genres
+                </p>
               </Typography>
       </CardContent>
 
