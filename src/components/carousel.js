@@ -12,16 +12,17 @@ export default function MyCarousel({tileData}) {
 
   return (
     <Carousel activeIndex={index} onSelect={handleSelect}>
+
       {tileData.map((tile) => { 
           return(           
             <Carousel.Item>
                 <Link href={tile.url}>
-                  <a>
+                  <a target="_blank">
                     <img
                         className="d-block w-100"
                         src={tile.img}
                         alt={tile.title}
-                        width={800}
+                        width={700}
                         height={600}
                     />
                   </a>
