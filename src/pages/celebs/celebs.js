@@ -26,6 +26,68 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 
 
 export default function Home() {
+
+    const tileData = [{
+        img: "/images/celebs/Ramsey-Noah/ramseynouah-2.jpg",
+        title: 'First slide label', 
+        desc: "Nulla vitae elit libero, a pharetra augue mollis interdum.", 
+        url: "/images/celebs/Ramsey-Noah/ramseynouah-2.jpg",
+        author: "Dewa Ade-Onojobi"
+    },{
+        img: "/images/celebs/Ramsey-Noah/ramson-bckd.jpg",
+        title: 'Second slide label', 
+        desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", 
+        url: "/images/celebs/Ramsey-Noah/ramson-bckd.jpg",
+        author: "Dewa Ade-Onojobi"
+    },{
+        img: "/images/celebs/Ramsey-Noah/ramseynouah-3.jpg",
+        title: 'Third slide label', 
+        desc: "Praesent commodo cursus magna, vel scelerisque nisl consectetur.",
+        url: "/images/celebs/Ramsey-Noah/ramseynouah-3.jpg", 
+        author: "Dewa Ade-Onojobi"
+    },{
+        img: "/images/celebs/Ramsey-Noah/ramseynouah-4.jpg",
+        title: 'Fourth slide label', 
+        desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", 
+        url:"/images/celebs/Ramsey-Noah/ramseynouah-4.jpg",
+        author: "Dewa Ade-Onojobi"
+    },{
+        img: "/images/celebs/Ramsey-Noah/ramseynouah-5.jpg",
+        title: 'Fifth slide label', 
+        desc: "Praesent commodo cursus magna, vel scelerisque nisl consectetur.",
+        url: "/images/celebs/Ramsey-Noah/ramseynouah-5.jpg", 
+        author: "Dewa Ade-Onojobi"
+    },{
+        img: "/images/celebs/Ramsey-Noah/ramseynouah-6.jpg",
+        title: 'Sixth slide label', 
+        desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", 
+        url: "/images/celebs/Ramsey-Noah/ramseynouah-6.jpg",
+        author: "Dewa Ade-Onojobi"
+    },{
+        img: "/images/celebs/Ramsey-Noah/ramseynouah-7.jpg",
+        title: 'Seventh slide label', 
+        desc: "Nulla vitae elit libero, a pharetra augue mollis interdum.", 
+        url: "/images/celebs/Ramsey-Noah/ramseynouah-7.jpg",
+        author: "Dewa Ade-Onojobi"
+    },{
+        img: "/images/celebs/Ramsey-Noah/ramseynouah-8.jpg",
+        title: 'Eighth slide label', 
+        desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", 
+        url: "/images/celebs/Ramsey-Noah/ramseynouah-8.jpg",
+        author: "Dewa Ade-Onojobi"
+    },{
+        img: "/images/celebs/Ramsey-Noah/ramseynouah-9.jpg",
+        title: '', 
+        desc: "", 
+        url: "/images/celebs/Ramsey-Noah/ramseynouah-9.jpg",
+        author: "Dewa Ade-Onojobi"
+    },{
+        img: "/images/celebs/Ramsey-Noah/angels-heart.jpg",
+        title: '', 
+        desc: "", 
+        url: "https://www.youtube.com/watch?v=z-WIAD4LgnI",
+        author: "Dewa Ade-Onojobi"
+    }]
     
   return (
     <Layout>
@@ -53,7 +115,7 @@ export default function Home() {
         title="Ramsey Noah"
         subheader="Actor | Director | Producer"
       />
-        <MyCarousel/>
+        <MyCarousel tileData={tileData}/>
         <CardContent>
           <Typography gutterBottom variant="h4" component="h2">
             Bio
@@ -100,7 +162,7 @@ export default function Home() {
     </Col>
     </Row>
     <Row>
-        <Col>
+        <Col md={9}>
     <Card>
       <CardContent>
         <CardHeader title="Filmology" />
@@ -108,8 +170,6 @@ export default function Home() {
         <CardMedia key={1}
           component="img"
           alt="Filmology List"
-          height="600"
-          width='200'
           image="/images/celebs/Ramsey-Noah/ramson-filmology.png"
         />
       </CardContent>
@@ -118,33 +178,37 @@ export default function Home() {
       </CardActions>
     </Card>
     </Col>
-    <Col>
-        <Card>
-      <CardContent>
+    <Col  md={3}>
+        <Card >
+      <CardContent >
         <CardHeader title="Related Celebrities" />
-        <Divider flexItem style={{color:"#000000"}}/>
-        <Typography variant="body2" color="textSecondary" component="p">
-                <li className="list-unstyled text-decoration-none">
-                  <Link href="/">
-                    <a style={{ color: "#ffffff" }}>Home</a>
-                  </Link>
-                </li>
-                <li className="list-unstyled text-decoration-none">
-                  <Link href="/about-us">
-                    <a style={{ color: "#ffffff" }}>About Us</a>
-                  </Link>
-                </li>
-                <li className="list-unstyled text-decoration-none">
-                  <Link href="/celebs/celebs">
-                    <a style={{ color: "#ffffff" }}>Celebs</a>
-                  </Link>
-                </li>
-                <p className="ml-4">
-                    Genres
+        <Typography variant="body2" className="pt-4" component="p"  minheight={900}>
+                <p className="ml-4 mb-4 mt-4">
+                    <a href="#" style={{ color: "#403f3f" }}>Dawn Thandeka King</a>
+                </p>
+                <p className="ml-4 mb-4 mt-4">
+                    <a href="#" style={{ color: "#403f3f" }}>Tumi Morake</a>
+                </p>
+                <p className="ml-4 mb-4 mt-4">
+                    <a href="#" style={{ color: "#403f3f" }}>Idris Sultan</a>
+                </p>
+                <p className="ml-4 mb-4 mt-4">
+                    <a href="#" style={{ color: "#403f3f" }}>Fabian Adeoye Lojede</a>
+                </p>
+                <p className="ml-4 mb-4 mt-4">
+                    <a href="#" style={{ color: "#403f3f" }}>Uchemba Williams</a>
+                </p>
+                <p className="ml-4 mb-4 mt-4">
+                    <a href="#" style={{ color: "#403f3f" }}>Trevor Gumbi</a>
+                </p>
+                <p className="ml-4 mb-4 mt-4">
+                    <a href="#" style={{ color: "#403f3f" }}>Shaleen Surtie-Richards</a>
+                </p>
+                <p className="ml-4 mb-4 mt-4">
+                    <a href="#" style={{ color: "#403f3f" }}>Leroy Gopal</a>
                 </p>
               </Typography>
       </CardContent>
-
     </Card>
     </Col>
     </Row>
