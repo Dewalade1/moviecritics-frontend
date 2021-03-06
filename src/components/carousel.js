@@ -13,9 +13,9 @@ export default function MyCarousel({tileData}) {
   return (
     <Carousel activeIndex={index} onSelect={handleSelect}>
 
-      {tileData.map((tile) => { 
+      {tileData.map((tile, index) => { 
           return(           
-            <Carousel.Item>
+            <Carousel.Item key={index}>
                 <Link href={tile.url}>
                   <a target="_blank">
                     <img
