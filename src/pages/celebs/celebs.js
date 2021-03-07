@@ -5,6 +5,7 @@ import Link from 'next/link';
 
 import Layout from '../../layouts/layout';
 import MyCarousel from '../../../src/components/carousel';
+import ImageGridList from '../../components/imageGridList';
 import DialogBtn from '../../components/buttons/dialogButton';
 
 import { Container, Row, Col } from "react-bootstrap";
@@ -35,11 +36,8 @@ export default function Celeb() {
     const tileData = {
       name: "Ramsey Nouah",
       positions: ["Actor", "Director", "Producer"],
-      bio: [
-        'In 1996, he made his major screen movie debut in the well received Silent Night after performing in a few Nigeria home videos (now widely known as Nollywood) projects which never got released due to lack of completion funds and related issues. Succeeded by numerous Nigerian home video projects where he mainly played romantic roles, from the 1990\'s through the early 2000\'s; Nouah was quickly labelled "Lover Boy". In 2004, he starred in Dangerous Twins (2004) and his stellar performance as a good and bad twin, Taiye and Kehinde, projected him as a multi layered actor capable of much more his "Lover Boy" image had suggested. By then, his fame had transcend the shores of Nigeria and was exceeding Africa.', 
-        "His face was on numerous movie posters and his performance progressively got stronger and attracted acclaim as he sold millions of Nigerian home video (which was straight to DVD) projects within lovers of African entertainment. He is an African household name that won't be forgotten for his immense contribution to the African entertainment industry at large. In 2009, he portrayed a socially awkward fresh graduate in The Figurine (2009). He is often regarded as one of Africa's greatest actor of all time.",
-        "With an amazing talent and acting range, he has managed to remain new and fresh even after more than two decades in the industry. He has won numerous awards for his acting and contribution to the African entertainment industry in Nigeria and around the world. In 2010, he won Best Actor at the African Movie Academy Awards for his performance in The Figurine (2009).He is a one of the few active pioneers and ambassador of the laudable Nigerian movie industry also known as Nollywood. His burning desire to add to the creative growth of Nollywood and African cinema led to his founding a movie production company called Ramseyfilms."],
-      imgs: {
+      bio: ['In 1996, he made his major screen movie debut in the well received Silent Night after performing in a few Nigeria home videos (now widely known as Nollywood) projects which never got released due to lack of completion funds and related issues. Succeeded by numerous Nigerian home video projects where he mainly played romantic roles, from the 1990\'s through the early 2000\'s; Nouah was quickly labelled "Lover Boy". In 2004, he starred in Dangerous Twins (2004) and his stellar performance as a good and bad twin, Taiye and Kehinde, projected him as a multi layered actor capable of much more his "Lover Boy" image had suggested. By then, his fame had transcend the shores of Nigeria and was exceeding Africa.', "His face was on numerous movie posters and his performance progressively got stronger and attracted acclaim as he sold millions of Nigerian home video (which was straight to DVD) projects within lovers of African entertainment. He is an African household name that won't be forgotten for his immense contribution to the African entertainment industry at large. In 2009, he portrayed a socially awkward fresh graduate in The Figurine (2009). He is often regarded as one of Africa's greatest actor of all time.", "With an amazing talent and acting range, he has managed to remain new and fresh even after more than two decades in the industry. He has won numerous awards for his acting and contribution to the African entertainment industry in Nigeria and around the world. In 2010, he won Best Actor at the African Movie Academy Awards for his performance in The Figurine (2009).He is a one of the few active pioneers and ambassador of the laudable Nigerian movie industry also known as Nollywood. His burning desire to add to the creative growth of Nollywood and African cinema led to his founding a movie production company called Ramseyfilms."],
+      img: {
         celeb: [
           {
             img: "/images/celebs/Ramsey-Noah/ramseynouah-2.jpg",
@@ -92,18 +90,56 @@ export default function Celeb() {
             author: "Dewa Ade-Onojobi",
           },
         ],
+        movies: [
+          {
+            // img: "",
+            title: "",
+          },
+          {
+            // img: "",
+            title: "",
+          },
+          {
+            // img: "",
+            title: "",
+          },
+          {
+            // img: "",
+            title: "",
+          },
+          {
+            // img: "",
+            title: "",
+          },
+          {
+            // img: "",
+            title: "",
+          },
+          {
+            // img: "",
+            title: "",
+          },
+          {
+            // img: "",
+            title: "",
+          },
+          {
+            // img: "",
+            title: "",
+          },
+        ],
       },
       btn: {
         btnText: "Learn More",
         fullWidth: true,
         maxWidth: "md",
-        dialogFooterBtn: true
+        dialogFooterBtn: true,
       },
     };
     
   return (
     <Layout>
-      <div className="pl-4 pr-4 mt-4 mb-4">
+      <div className="pl-4 pr-4 mb-4">
         <Row>
           <Col>
             <Card className="mt-4 mb-4">
@@ -141,16 +177,13 @@ export default function Celeb() {
                   title={tileData.name}
                   subheader="Actor | Director | Producer"
                 />
-                <MyCarousel tileData={tileData.imgs.celeb} />
+                <MyCarousel tileData={tileData.img.celeb} />
                 <CardContent>
                   <Typography gutterBottom variant="h4" component="h2">
                     Bio
                   </Typography>
                   <Typography variant="body2" color="textSecondary" component="p">
                     <p>In 1996, he made his major screen movie debut in the well received Silent Night after performing in a few Nigeria home videos (now widely known as Nollywood) projects which never got released due to lack of completion funds and related issues. Succeeded by numerous Nigerian home video projects where he mainly played romantic roles, from the 1990's through the early 2000's; Nouah was quickly labelled "Lover Boy". In 2004, he starred in Dangerous Twins (2004) and his stellar performance as a good and bad twin, Taiye and Kehinde, projected him as a multi layered actor capable of much more his "Lover Boy" image had suggested. By then, his fame had...</p>
-                    {/* <p>His face was on numerous movie posters and his performance progressively got stronger and attracted acclaim as he sold millions of Nigerian home video (which was straight to DVD) projects within lovers of African entertainment. He is an African household name that won't be forgotten for his immense contribution to the African entertainment industry at large. In 2009, he portrayed a socially awkward fresh graduate in The Figurine (2009). He is often regarded as one of Africa's greatest actor of all time.</p>
-                    <p>With an amazing talent and acting range, he has managed to remain new and fresh even after more than two decades in the industry. He has won numerous awards for his acting and contribution to the African entertainment industry in Nigeria and around the world. In 2010, he won Best Actor at the African Movie Academy Awards for his performance in The Figurine (2009).He is a one of the few active pioneers and ambassador of the laudable Nigerian movie industry also known as Nollywood. His burning desire to add to the creative growth of Nollywood and African cinema led to his founding a movie production company called Ramseyfilms.</p>
-                    <p>Nouah blends developing slates of films under his production company with starring in various genres of films that appeals to him. In 2015, Nouah will be seen in '76 (2016).</p> */}
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -161,23 +194,33 @@ export default function Celeb() {
           </Col>
         </Row>
         <Row>
+          <Col>
+            <Card className="mb-4">
+              <CardContent>
+                <CardHeader title="Top Movies" />
+                <ImageGridList imgData={tileData.img.movies} />
+              </CardContent>
+              <CardActions>
+                <DialogBtn btnData={tileData} />
+              </CardActions>
+            </Card>
+          </Col>
+        </Row>
+        <Row>
           <Col md={9}>
-            <Card>
+            <Card className="mb-4">
               <CardContent>
                 <CardHeader title="Filmology" />
                 <Divider flexItem />
                 <CardMedia key={1} component="img" alt="Filmology List" image="/images/celebs/Ramsey-Noah/ramson-filmology.png" />
               </CardContent>
               <CardActions>
-                <Button size="small" color="primary" style={{ color: "#FF8C00" }}>
-                  {" "}
-                  Learn More
-                </Button>
+                <DialogBtn btnData={tileData} />
               </CardActions>
             </Card>
           </Col>
           <Col md={3}>
-            <Card>
+            <Card className="mb-4" style={{minHeight: "64em"}}>
               <CardContent>
                 <CardHeader title="Related Celebrities" />
                 <Typography variant="body2" className="pt-4" component="p" minheight={900}>
