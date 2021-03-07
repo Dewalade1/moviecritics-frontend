@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   gridList: {
     flexWrap: 'nowrap',
     // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
-    // transform: 'translateZ(0)',
+
   },
   title: {
     color: theme.palette.primary.light,
@@ -52,7 +52,7 @@ export default function ImageGridList({imgData}) {
               }}
               actionIcon={
                 <IconButton aria-label={`fav ${tile.title}`}>
-                  <FavoriteIcon className={classes.title} />
+                  <FavoriteIcon style={{color: "#ffffff"}} />
                 </IconButton>
               }
             />

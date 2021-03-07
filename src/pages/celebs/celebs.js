@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Layout from '../../layouts/layout';
 import MyCarousel from '../../../src/components/carousel';
 import ImageGridList from '../../components/imageGridList';
+import MyCardDeck from "../../components/CardDeck";
 import DialogBtn from '../../components/buttons/dialogButton';
 
 import { Container, Row, Col } from "react-bootstrap";
@@ -92,40 +93,46 @@ export default function Celeb() {
         ],
         movies: [
           {
-            // img: "",
-            title: "",
+            img: "/images/celebs/Ramsey-Noah/media/merry-men-2.jpg",
+            url: "",
+            title: "Merry Men 2",
+            year: "2019",
+            genre: "",
           },
           {
-            // img: "",
-            title: "",
+            img: "/images/celebs/Ramsey-Noah/media/living-in-bondage-poster.jpg",
+            url: "",
+            title: "Living in Bondage",
+            year: "2019",
+            genre: "",
           },
           {
-            // img: "",
-            title: "",
+            img: "/images/celebs/Ramsey-Noah/media/soul-tie.jpg",
+            url: "",
+            title: "Soul Tie",
+            year: "2017",
+            genre: "",
           },
           {
-            // img: "",
-            title: "",
+            img: "/images/celebs/Ramsey-Noah/media/my-wife-and-i.jpg",
+            url: "",
+            title: "My Wife and I",
+            year: "2017",
+            genre: "",
           },
           {
-            // img: "",
-            title: "",
+            img: "/images/celebs/Ramsey-Noah/media/body-language.jpg",
+            url: "",
+            title: "Body Language",
+            year: "2017",
+            genre: "",
           },
           {
-            // img: "",
-            title: "",
-          },
-          {
-            // img: "",
-            title: "",
-          },
-          {
-            // img: "",
-            title: "",
-          },
-          {
-            // img: "",
-            title: "",
+            img: "/images/celebs/Ramsey-Noah/media/gbomo-gbomo-express.jpg",
+            url: "",
+            title: "Gbomo Gbomo Express",
+            year: "2015",
+            genre: "",
           },
         ],
       },
@@ -197,12 +204,19 @@ export default function Celeb() {
           <Col>
             <Card className="mb-4">
               <CardContent>
-                <CardHeader title="Top Movies" />
-                <ImageGridList imgData={tileData.img.movies} />
+                <CardHeader title="Photos" />
+                <ImageGridList imgData={tileData.img.celeb} />
               </CardContent>
-              <CardActions>
-                <DialogBtn btnData={tileData} />
-              </CardActions>
+            </Card>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <Card className="mb-4">
+              <CardContent>
+                <CardHeader title="Top Rated Movies" />
+                <MyCardDeck cardData={tileData.img.movies} />
+              </CardContent>
             </Card>
           </Col>
         </Row>
@@ -220,7 +234,7 @@ export default function Celeb() {
             </Card>
           </Col>
           <Col md={3}>
-            <Card className="mb-4" style={{minHeight: "64em"}}>
+            <Card className="mb-4" style={{ minHeight: "64em" }}>
               <CardContent>
                 <CardHeader title="Related Celebrities" />
                 <Typography variant="body2" className="pt-4" component="p" minheight={900}>
