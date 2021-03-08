@@ -1,12 +1,13 @@
-import {useState} from 'react';
+import {useState, useContext} from 'react';
 import Link from "next/link";
 import {CardDeck, Card } from 'react-bootstrap';
 
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
 
+import StateContext from '../components/contexts/stateContext';
+
 import Rating from "@material-ui/lab/Rating";
-import { positions } from "@material-ui/system";
 
 import StarBorderIcon from "@material-ui/icons/StarBorder";
 import AddBoxOutlinedIcon from "@material-ui/icons/AddBoxOutlined";
@@ -14,7 +15,8 @@ import PlayArrowRoundedIcon from '@material-ui/icons/PlayArrowRounded';
 
 export default function MyCardDeck ( {cardData} ) {
 
-    const [index, setIndex] = useState(0);
+    const appState = useContext(StateContext);
+    const index = appState.index;
 
     return (
       <CardDeck>
@@ -22,12 +24,12 @@ export default function MyCardDeck ( {cardData} ) {
           <Card key={index}>
             <Link href="#!">
               <a>
-                <Card.Img variant="top" src={tile.img ? tile.img : "/images/movies/defaults/default-poster-1.jpg"} alt={tile.title} height={260}/>
+                <Card.Img variant="top" src={tile.img ? tile.img : "/images/movies/defaults/default-poster-1.jpg"} alt={tile.title} height={260} />
               </a>
             </Link>
             <Card.Body className="text-center pb-1">
-              <div className="align-text-top">
-                <Card.Title>
+              <div>
+                <Card.Title style={{ height: "50px" }}>
                   <Link href="#!">
                     <a style={{ color: "#fd7e14" }}>
                       <h6>{tile.title}</h6>

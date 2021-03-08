@@ -79,6 +79,7 @@ export default function Home() {
   return (
     <Layout>
       <div className="text-center">
+          {/* put card in carousel for titles */}
      <MyCarousel tileData={tileData}/>
       </div>
     </Layout>
