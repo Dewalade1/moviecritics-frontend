@@ -80,34 +80,35 @@ function Header () {
           <MainNav />
           <Col>
             <ThemeProvider theme={theme}>
-          <TextField
-            margin="dense" 
-            id="search" 
-            placeholder="Search Moviecritics..." 
-            type="text" 
-            InputProps={{
-            startAdornment: <InputAdornment position="start" >
-              <Select
-                id="simple-select-outlined"
-                value={searchParam}
-                onChange={handleChange}
-                input={<BootstrapInput />}
-              >
-                <MenuItem value={10}>All</MenuItem>
-                <MenuItem value={20}>Movies</MenuItem>
-                <MenuItem value={30}>Celebs</MenuItem>
-                <MenuItem value={40}>Users</MenuItem>
-              </Select>
-               <Divider orientation="vertical" />
-            </InputAdornment>,
-            endAdornment: <InputAdornment position="end">
-                            <SearchRoundedIcon/>
-                          </InputAdornment>,
-          }} 
-          variant="outlined" 
-          fullWidth/>
-          </ThemeProvider>
-        </Col>
+              <TextField
+                margin="dense"
+                id="search"
+                placeholder="Search Moviecritics..."
+                type="text"
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <Select id="simple-select-outlined" value={searchParam} onChange={handleChange} input={<BootstrapInput />}>
+                        <MenuItem value={10}>All</MenuItem>
+                        <MenuItem value={20}>Movies</MenuItem>
+                        <MenuItem value={30}>Celebs</MenuItem>
+                        <MenuItem value={40}>Users</MenuItem>
+                      </Select>
+                      <Divider orientation="vertical" />
+                    </InputAdornment>
+                  ),
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <SearchRoundedIcon />
+                    </InputAdornment>
+                  ),
+                }}
+                variant="outlined"
+                fullWidth
+                style={{ background: "#ffffff" }}
+              />
+            </ThemeProvider>
+          </Col>
 
           <IconButton aria-label="notifications" component="span" className="ml-2 mr-2">
             <Badge badgeContent={9} color="error">
