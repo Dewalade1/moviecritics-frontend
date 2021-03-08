@@ -6,7 +6,7 @@ import Link from 'next/link';
 import Layout from '../../layouts/layout';
 import MyCarousel from '../../../src/components/carousel';
 import ImageGridList from '../../components/imageGridList';
-import MyCardDeck from "../../components/CardDeck";
+import MyCardDeck from "../../components/cardDeck";
 import DialogBtn from '../../components/buttons/dialogButton';
 
 import { Container, Row, Col } from "react-bootstrap";
@@ -37,6 +37,9 @@ export default function Celeb() {
     const tileData = {
       name: "Ramsey Nouah",
       positions: ["Actor", "Director", "Producer"],
+      likes: "30k",
+      dislikes: "2k",
+      favs: "10k",
       bio: ['In 1996, he made his major screen movie debut in the well received Silent Night after performing in a few Nigeria home videos (now widely known as Nollywood) projects which never got released due to lack of completion funds and related issues. Succeeded by numerous Nigerian home video projects where he mainly played romantic roles, from the 1990\'s through the early 2000\'s; Nouah was quickly labelled "Lover Boy". In 2004, he starred in Dangerous Twins (2004) and his stellar performance as a good and bad twin, Taiye and Kehinde, projected him as a multi layered actor capable of much more his "Lover Boy" image had suggested. By then, his fame had transcend the shores of Nigeria and was exceeding Africa.', "His face was on numerous movie posters and his performance progressively got stronger and attracted acclaim as he sold millions of Nigerian home video (which was straight to DVD) projects within lovers of African entertainment. He is an African household name that won't be forgotten for his immense contribution to the African entertainment industry at large. In 2009, he portrayed a socially awkward fresh graduate in The Figurine (2009). He is often regarded as one of Africa's greatest actor of all time.", "With an amazing talent and acting range, he has managed to remain new and fresh even after more than two decades in the industry. He has won numerous awards for his acting and contribution to the African entertainment industry in Nigeria and around the world. In 2010, he won Best Actor at the African Movie Academy Awards for his performance in The Figurine (2009).He is a one of the few active pioneers and ambassador of the laudable Nigerian movie industry also known as Nollywood. His burning desire to add to the creative growth of Nollywood and African cinema led to his founding a movie production company called Ramseyfilms."],
       img: {
         celeb: [
@@ -94,45 +97,51 @@ export default function Celeb() {
         movies: [
           {
             img: "/images/celebs/Ramsey-Noah/media/merry-men-2.jpg",
-            url: "",
+            url: "https://www.youtube.com/watch?v=thx-M3hTGLs",
             title: "Merry Men 2",
             year: "2019",
-            genre: "",
+            genre: "Action | Comedy",
+            rating: 4.0,
           },
           {
             img: "/images/celebs/Ramsey-Noah/media/living-in-bondage-poster.jpg",
-            url: "",
-            title: "Living in Bondage",
+            url: "https://www.youtube.com/watch?v=IhvJG_c8Kgw",
+            title: "Living in Bondage II",
             year: "2019",
-            genre: "",
+            genre: "Drama",
+            rating: 3.5,
           },
           {
             img: "/images/celebs/Ramsey-Noah/media/soul-tie.jpg",
-            url: "",
+            url: "https://www.youtube.com/watch?v=7wE5o_RFPDE",
             title: "Soul Tie",
             year: "2017",
-            genre: "",
+            genre: "Drama",
+            rating: 4.5,
           },
           {
             img: "/images/celebs/Ramsey-Noah/media/my-wife-and-i.jpg",
-            url: "",
+            url: "https://www.youtube.com/watch?v=IKP2IXIeJPE",
             title: "My Wife and I",
             year: "2017",
-            genre: "",
+            genre: "Comedy | Family",
+            rating: 2.0,
           },
           {
             img: "/images/celebs/Ramsey-Noah/media/body-language.jpg",
-            url: "",
+            url: "https://www.youtube.com/watch?v=LfpyNi1_dqE",
             title: "Body Language",
             year: "2017",
-            genre: "",
+            genre: "Drama | Thriller",
+            rating: 3.2,
           },
           {
             img: "/images/celebs/Ramsey-Noah/media/gbomo-gbomo-express.jpg",
-            url: "",
+            url: "https://www.youtube.com/watch?v=Vi3N9B97m38",
             title: "Gbomo Gbomo Express",
             year: "2015",
-            genre: "",
+            genre: "Comedy | Crime",
+            rating: 5.0,
           },
         ],
       },
@@ -140,7 +149,7 @@ export default function Celeb() {
         btnText: "Learn More",
         fullWidth: true,
         maxWidth: "md",
-        dialogFooterBtn: true,
+        dialogFooterBtn: false,
       },
     };
     
@@ -159,16 +168,19 @@ export default function Celeb() {
                   }
                   action={
                     <CardActions disableSpacing>
+                      {tileData.likes}
                       <Tooltip title="Like" placement="top">
                         <IconButton aria-label="like">
                           <ThumbUpRoundedIcon />
                         </IconButton>
                       </Tooltip>
+                      {tileData.dislikes}
                       <Tooltip title="Dislike" placement="top">
                         <IconButton aria-label="dislike">
                           <ThumbDownRoundedIcon />
                         </IconButton>
                       </Tooltip>
+                      {tileData.favs}
                       <Tooltip title="Add to Favourites" placement="top">
                         <IconButton aria-label="add to favorites">
                           <FavoriteIcon />
