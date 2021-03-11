@@ -1,4 +1,5 @@
 import '../../styles/globals.css';
+import "../../styles/bootstrap.min.css";
 
 import { init } from "../../utils/sentry";
 import {useImmerReducer} from 'use-immer';
@@ -14,16 +15,20 @@ export default function App({ Component, pageProps, err }) {
     index: 0,
     btn: {
       isClicked: false,
+      isLikeClicked: false,
+      isDislikeClicked: false,
+      isFavClicked: false
     }
   };
 
   function customReducer(draft, action) {
     switch (action.type) {
       case "click":
-        draft.isClicked = !draft.isClicked;
+        draft.btn.isClicked = !draft.btn.isClicked;
         break;
-      case "reduceIndex":
-        draft.index--;
+      case "like":
+        draft.btn.isLikeClicked = !draft.btn.isLikeClicked;
+        draft.btn.isDislikeClicked = false;
         break;
     }
   }
