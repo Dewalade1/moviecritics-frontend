@@ -22,6 +22,15 @@ const COMMIT_SHA =
 
 process.env.SENTRY_DSN = SENTRY_DSN;
 
+
+module.exports = {
+  env: {
+    PUBLIC_CONTENTFUL_SPACE_ID: "2d94qo8clahv",
+    PUBLIC_CONTENTFUL_ACCESS_TOKEN: "bTqcdBJICOPjhSh_ECLUtDlW1qlsmeSECUlCh-8-D8M",
+    PUBLIC_CONTENTFUL_ENVIRONMENT: "master"
+  },
+};
+
 module.exports = withSourceMaps({
   webpack: (config, options) => {
     // In `pages/_app.js`, Sentry is imported from @sentry/browser. While

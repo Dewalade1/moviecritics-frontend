@@ -1,10 +1,17 @@
-import Head from 'next/head';
+import Link from 'next/link';
+
+import { Container, Row, Col, Card, CardDeck } from "react-bootstrap";
 
 import Layout from '../layouts/layout';
 import MyCarousel from '../../src/components/carousel';
+import CardList from '../../src/components/cardList';
+import { fetchEntries, singleEvent } from "../../public/data/config";
 
+// import Card from "@material-ui/core/Card";
+import CardHeader from "@material-ui/core/CardHeader";
+import CardContent from "@material-ui/core/CardContent";
 
-export default function Home() {
+export default function Home({response}) {
 
   const tileData = [{
         img: "/images/movies/posters/thy-will-be-done-1.jpg",
@@ -76,10 +83,40 @@ export default function Home() {
 
   return (
     <Layout>
-      <div className="text-center">
-          {/* put card in carousel for titles */}
-     <MyCarousel tileData={tileData}/>
-      </div>
+      <Card className="text-center">
+        {/* put card in carousel for titles */}
+        <MyCarousel tileData={tileData} />
+      </Card>
+
+      <Row className="mt-4">
+        <Col>
+            <Card className="mb-4 pl-2" variant="outlined">
+              <CardContent>
+                <CardHeader title="Celebrities" />
+                  <CardDeck>
+                    {response.map((data) => (
+                        <CardList tileData={data} key={data.sys.id} />
+                    ))}
+                  </CardDeck>
+              </CardContent>
+            </Card>
+
+        </Col>
+      </Row>
     </Layout>
-  )
+  );
+}
+
+export async function getServerSideProps() {
+  const res = await fetchEntries('celebs');
+
+  const response = await res.map((celeb) => {
+    return celeb;
+  });
+
+  return {
+    props: {
+      response,
+    },
+  };
 }
