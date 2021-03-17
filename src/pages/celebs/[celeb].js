@@ -1,17 +1,17 @@
 import React from 'react';
 
-import Head from 'next/head';
-import Link from 'next/link';
+import Axios from 'axios';
+
+import { useRouter } from 'next/router'
 
 import Layout from '../../layouts/layout';
-import MyCarousel from '../../../src/components/carousel';
+import MyCarousel from '../../components/carousel';
 import ImageGridList from '../../components/imageGridList';
 import MyCardDeck from "../../components/cardDeck";
 import DialogBtn from '../../components/buttons/dialogButton';
+import {fetchEntries, singleId} from '../../../public/data/config';
 
 import { Container, Row, Col } from "react-bootstrap";
-
-import "bootstrap/dist/css/bootstrap.min.css";
 
 import Card from '@material-ui/core/Card';
 import Avatar from '@material-ui/core/Avatar';
@@ -31,8 +31,12 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import ThumbUpRoundedIcon from "@material-ui/icons/ThumbUpRounded";
 import ThumbDownRoundedIcon from "@material-ui/icons/ThumbDownRounded";
 
+Axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
-export default function Celeb() {
+export default function Celebs({celeb}) {
+
+   const router = useRouter()
+   const { cel } = router.query
 
     const tileData = {
       name: "Ramsey Nouah",
@@ -155,6 +159,7 @@ export default function Celeb() {
     
   return (
     <Layout>
+      {/* console.log(celebs) */}
       <div className="pl-4 pr-4 mb-4">
         <Row>
           <Col>
@@ -163,24 +168,24 @@ export default function Celeb() {
                 <CardHeader
                   avatar={
                     <Avatar aria-label="recipe">
-                      <img src="/images/celebs/Ramsey-Noah/ramseynouah-1.jpg" height={40} width={40} alt="R" />
+                      <img src={celeb.fields.avatar ? "https://" + celeb.fields.avatar.fields.file.url : "/images/movies/defaults/default-poster-1.jpg"} height={40} width={40} alt="M" />
                     </Avatar>
                   }
                   action={
                     <CardActions disableSpacing>
-                      {tileData.likes}
+                      {celeb.fields.likes}
                       <Tooltip title="Like" placement="top">
                         <IconButton aria-label="like">
                           <ThumbUpRoundedIcon />
                         </IconButton>
                       </Tooltip>
-                      {tileData.dislikes}
+                      {celebs.fields.dislikes}
                       <Tooltip title="Dislike" placement="top">
                         <IconButton aria-label="dislike">
                           <ThumbDownRoundedIcon />
                         </IconButton>
                       </Tooltip>
-                      {tileData.favs}
+                      {celebs.fields.favs}
                       <Tooltip title="Add to Favourites" placement="top">
                         <IconButton aria-label="add to favorites">
                           <FavoriteIcon />
@@ -193,16 +198,16 @@ export default function Celeb() {
                       </Tooltip>
                     </CardActions>
                   }
-                  title={tileData.name}
+                  title={celebs.fields.name}
                   subheader="Actor | Director | Producer"
                 />
-                <MyCarousel tileData={tileData.img.celeb} />
+                <MyCarousel tileData={celebs.fields.img.celeb} />
                 <CardContent>
                   <Typography gutterBottom variant="h4" component="h2">
                     Bio
                   </Typography>
                   <Typography variant="body2" color="textSecondary" component="p">
-                    <p>In 1996, he made his major screen movie debut in the well received Silent Night after performing in a few Nigeria home videos (now widely known as Nollywood) projects which never got released due to lack of completion funds and related issues. Succeeded by numerous Nigerian home video projects where he mainly played romantic roles, from the 1990's through the early 2000's; Nouah was quickly labelled "Lover Boy". In 2004, he starred in Dangerous Twins (2004) and his stellar performance as a good and bad twin, Taiye and Kehinde, projected him as a multi layered actor capable of much more his "Lover Boy" image had suggested. By then, his fame had...</p>
+                    {celeb.fields.bio}
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -217,7 +222,7 @@ export default function Celeb() {
             <Card className="mb-4">
               <CardContent>
                 <CardHeader title="Photos" />
-                <ImageGridList imgData={tileData.img.celeb} />
+                <ImageGridList imgData={celebs.fields.img.celeb} />
               </CardContent>
             </Card>
           </Col>
@@ -227,7 +232,7 @@ export default function Celeb() {
             <Card className="mb-4">
               <CardContent>
                 <CardHeader title="Top Rated Movies" />
-                <MyCardDeck cardData={tileData.img.movies} />
+                <MyCardDeck cardData={celebs.fields.movies} />
               </CardContent>
             </Card>
           </Col>
@@ -298,4 +303,22 @@ export default function Celeb() {
       </div>
     </Layout>
   );
+}
+
+export async function getStaticProps({ params }) {
+  const celebs = await singleId(params.celeb);
+
+  return { props: { celebs } };
+}
+
+export async function getStaticPaths() {
+
+  const celeb = await fetchEntries('celebs')
+  const paths = celeb.map((celeb) => ({
+      params: {celeb: celeb.sys.id}
+  }))
+  return {
+      paths,
+      fallback: true
+  }
 }
