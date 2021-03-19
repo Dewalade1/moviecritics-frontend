@@ -12,26 +12,24 @@ export async function fetchEntries(contentType) {
   console.log(`Error getting Entries for ${entries.name}.`);
 }
 
-export async function fetchEntriess(e) {
-  const entries = await client.getEntry({});
-  if (entries.items) return entries.items;
-  console.log(`Error getting Entries for ${entries.name}.`);
-}
+export async function singleEntryBySlug(slug){
+   const entry = await client.getEntries({
+     "content_type" : "celebs",
+     "fields.url": slug,
+     "limit" : 1
+   })
 
-export async function singleEvent(_id) {
-  const entries = await client.getEntry({
-    id: _id,
-  });
-  if (entries.items) return entries.items;
-  console.log(`Error getting Entries for ${entries.name}.`);
-}
+    if (entry.items) {
+    return entry.items
+    }
+    console.log(`Error getting Entries for ${entry.name}.`)
+  }
 
-export async function singleId(id) {
-  const entries = await client.getEntry(id);
-  if (entries) return entries;
-  console.log(entries);
+export async function singleEntry(id) {
+  const entry = await client.getEntry(id);
+  if (entry) return entry;
 
-  console.log(`Error getting Entries for ${entries}.`);
+  console.log(`Error getting Entries for ${entry}.`);
 }
 
 export default { fetchEntries };

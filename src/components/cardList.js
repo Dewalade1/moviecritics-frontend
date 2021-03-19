@@ -27,8 +27,6 @@ export default function CardList({tileData}) {
     <div className="pl-2 pr-2 ml-4">
       <Link href={`/celebs/${tileData.fields.url}`}>
         <a>
-      <Card className={classes.root} variant="outlined" key={tileData.sys.id}>
-        <CardActionArea>
           <img 
           src={tileData.fields.avatar ? "https://" + tileData.fields.avatar.fields.file.url : "/images/movies/defaults/default-poster-1.jpg"} 
           title={tileData.fields.name} 
@@ -37,8 +35,6 @@ export default function CardList({tileData}) {
           style={{borderRadius: "50%"}}
           key={tileData.sys.id}
         />
-        </CardActionArea>
-      </Card>
 
       <p className="text-center mt-4" style={{color: "#000000"}}>{tileData.fields.name}</p>
        </a>
