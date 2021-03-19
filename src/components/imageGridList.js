@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
   },
   titleBar: {
     background:
-      'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
+      'linear-gradient(to top, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
   },
 }));
 
@@ -43,15 +43,15 @@ export default function ImageGridList({imgData}) {
       <GridList className={classes.gridList} cols={6.5}>
         {imgData.map((tile, index) => (
           <GridListTile key={index}>
-            <img src={tile.img ? tile.img : "/images/movies/defaults/default-poster-1.jpg"} alt={tile.title} />
+            <img src={tile.fields.file.url} alt={tile.title ? tile.title : tile.fields.title} />
             <GridListTileBar
-              title={tile.title}
+              title={" "}
               classes={{
                 root: classes.titleBar,
                 title: classes.title,
               }}
               actionIcon={
-                <IconButton aria-label={`fav ${tile.title}`}>
+                <IconButton aria-label={`fav ${tile.fields.title}`}>
                   <FavoriteIcon style={{color: "#ffffff"}} />
                 </IconButton>
               }

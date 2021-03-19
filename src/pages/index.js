@@ -1,15 +1,16 @@
 import Link from 'next/link';
 
-import { Container, Row, Col, Card, CardDeck } from "react-bootstrap";
+import { Container, Row, Col, CardDeck } from "react-bootstrap";
 
 import Layout from '../layouts/layout';
 import MyCarousel from '../../src/components/carousel';
 import CardList from '../../src/components/cardList';
-import { fetchEntries, singleEvent } from "../../public/data/config";
+import { fetchEntries} from "../../public/data/config";
 
-// import Card from "@material-ui/core/Card";
+import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
 import CardContent from "@material-ui/core/CardContent";
+import CardActionArea from '@material-ui/core/CardActionArea';
 
 export default function Home({response}) {
 
@@ -86,6 +87,16 @@ export default function Home({response}) {
       <Card className="text-center">
         {/* put card in carousel for titles */}
         <MyCarousel tileData={tileData} />
+        <CardActionArea>
+            <CardContent>
+                {/* <Typography gutterBottom variant="h4" component="h2">
+                    <h3>{tile.title}</h3>
+                  </Typography>
+                  <Typography variant="body2" color="textSecondary" component="p">
+                    <p>{tile.desc}</p>
+                  </Typography> */}
+            </CardContent>
+        </CardActionArea>
       </Card>
 
       <Row className="mt-4">
