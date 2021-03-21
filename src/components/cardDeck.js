@@ -23,7 +23,7 @@ export default function MyCardDeck ( {cardData} ) {
           <Card key={tile.sys.id}  variant="outlined">
             <Link href="#!">
               <a>
-                <Card.Img variant="top" src={tile.fields.img.fields.file.url ? tile.fields.img.fields.file.url : "/images/movies/defaults/default-poster-1.jpg"} alt={tile.title} height={240} />
+                <Card.Img variant="top" src={tile.fields.img.fields.file.url ? tile.fields.img.fields.file.url : "https://res.cloudinary.com/hellodewa/image/upload/v1616337289/Moviecritics/images/sys/defaults/default-poster-1_gwh2dq.jpg"} alt={tile.title} height={240} />
               </a>
             </Link>
             <Card.Body className="text-center pb-1">

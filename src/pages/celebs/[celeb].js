@@ -63,7 +63,7 @@ export default function Celebs({celeb, otherCelebs}) {
                 <CardHeader
                   avatar={
                     <Avatar aria-label="recipe">
-                      <img src={celeb.fields.avatar ? "https://" + celeb.fields.avatar.fields.file.url : "/images/movies/defaults/default-poster-1.jpg"} height={40} width={40} alt="M" />
+                      <img src={celeb.fields.avatar ? "https://" + celeb.fields.avatar.fields.file.url : "https://res.cloudinary.com/hellodewa/image/upload/v1616337289/Moviecritics/images/sys/defaults/default-celeb-image_fi3aeb.png"} height={40} width={40} alt="M" />
                     </Avatar>
                   }
                   action={
@@ -138,7 +138,7 @@ export default function Celebs({celeb, otherCelebs}) {
               <CardContent>
                 <CardHeader title="Filmology" style={{color:"#FF8C00"}} />
                 <Divider flexItem />
-                <CardMedia key={1} component="img" alt="Filmology List" image="/images/celebs/Ramsey-Noah/ramson-filmology.png" />
+                <CardMedia key={1} component="img" alt="Filmology List" image="https://res.cloudinary.com/hellodewa/image/upload/v1616334474/Moviecritics/images/celebs/Ramsey-Noah/ramson-filmology_wewd3t.png" />
               </CardContent>
               <CardActions >
                 <DialogBtn btnData={appState.infoBtn} celebData={celeb.fields}/>

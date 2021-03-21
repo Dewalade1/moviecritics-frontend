@@ -57,106 +57,106 @@ export default function MainNav () {
       <>
         <Navbar.Brand href="/">
           <div className="ml-4 pl-4">
-            <img src="/images/logos/moviecritics-logo-white-background.png" width={140} height={40} className="d-inline-block align-top" />
+            <img src="https://res.cloudinary.com/hellodewa/image/upload/v1616334478/Moviecritics/images/logos/moviecritics-logo-white-background_kisl9f.png" width={140} height={40} className="d-inline-block align-top" />
           </div>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Nav className="mr-auto">
+        <Nav className="mr-auto">
+          <div>
             <div>
-              <div>
-                <Button onClick={toggleDrawer("left", true)}>
-                  {" "}
-                  <MenuRoundedIcon /> Menu
-                </Button>
-                <Drawer anchor={"left"} open={state["left"]} onClose={toggleDrawer("left", false)}>
-                  <div className={clsx(classes.list)} role="presentation" onClick={toggleDrawer("left", false)} onKeyDown={toggleDrawer("left", false)}>
-                    <List>
-                      <ListItem>{" "} </ListItem>
-                      <ListItem>
-                        <div className="ml-sm-6">
-                          <Link href="/">
-                            <a>
-                              <img src="/images/logos/moviecritics-logo-white-background.png" width={140} height={40} className="d-inline-block align-top" />
-                            </a>
-                          </Link>
-                        </div>
-                      </ListItem>
-                      <ListItem>{" "} </ListItem>
-                      <ListItem>
-                        <ListItemText primary="Menu" />
-                      </ListItem>
-                      <Link href="/" >
-                        <a style={{color: "#000000"}}>
-                          <ListItem button selected={selectedIndex === 0} onClick={(event) => handleListItemClick(event, 0)}>
-                            <ListItemIcon>
-                              <HomeRoundedIcon />
-                            </ListItemIcon>
-                            <ListItemText primary="Home" />
-                          </ListItem>
-                        </a>
-                      </Link>
-                      <Link href="/movies" >
-                        <a style={{color: "#000000"}}>
-                          <ListItem button selected={selectedIndex === 1} onClick={(event) => handleListItemClick(event, 1)}>
-                            <ListItemIcon>
-                              <TheatersRoundedIcon />
-                            </ListItemIcon>
-                            <ListItemText primary="Movies" />
-                          </ListItem>
-                        </a>
-                      </Link>
-                      <Link href="/celebs/celebs" >
-                        <a style={{color: "#000000"}}>
-                          <ListItem button selected={selectedIndex === 2} onClick={(event) => handleListItemClick(event, 2)}>
-                            <ListItemIcon>
-                              <PeopleRoundedIcon />
-                            </ListItemIcon>
-                            <ListItemText primary="Celebs" />
-                          </ListItem>
-                        </a>
-                      </Link>
-                      <Link href="/about-us" >
-                        <a style={{color: "#000000"}}>
-                          <ListItem button selected={selectedIndex === 3} onClick={(event) => handleListItemClick(event, 3)}>
-                            <ListItemIcon>
-                              <InfoRoundedIcon />
-                            </ListItemIcon>
-                            <ListItemText primary="About Us" />
-                          </ListItem>
-                        </a>
-                      </Link>
-                    </List>
-                    <Divider />
-                    <List>
-                      <ListItem>
-                        <ListItemText primary="Apps" />
-                      </ListItem>
-                      <Link href="/celebs/celebs" >
-                        <a style={{color: "#000000"}}>
-                          <ListItem button selected={selectedIndex === 4} onClick={(event) => handleListItemClick(event, 4)}>
-                            <ListItemIcon>
-                              <PhoneIphoneRoundedIcon />
-                            </ListItemIcon>
-                            <ListItemText primary="Mobile Apps" />
-                          </ListItem>
-                        </a>
-                      </Link>
-                      <Link href="/celebs/celebs" >
-                        <a style={{color: "#000000"}}>
-                          <ListItem button selected={selectedIndex === 5} onClick={(event) => handleListItemClick(event, 5)}>
-                            <ListItemIcon>
-                              <DesktopWindowsRoundedIcon />
-                            </ListItemIcon>
-                            <ListItemText primary="Desktop Apps" />
-                          </ListItem>
-                        </a>
-                      </Link>
-                    </List>
-                  </div>
-                </Drawer>
-              </div>
+              <Button onClick={toggleDrawer("left", true)}>
+                {" "}
+                <MenuRoundedIcon /> Menu
+              </Button>
+              <Drawer anchor={"left"} open={state["left"]} onClose={toggleDrawer("left", false)}>
+                <div className={clsx(classes.list)} role="presentation" onClick={toggleDrawer("left", false)} onKeyDown={toggleDrawer("left", false)}>
+                  <List>
+                    <ListItem> </ListItem>
+                    <ListItem>
+                      <div className="ml-sm-6">
+                        <Link href="/">
+                          <a>
+                            <img src="https://res.cloudinary.com/hellodewa/image/upload/v1616334478/Moviecritics/images/logos/moviecritics-logo-white-background_kisl9f.png" width={140} height={40} className="d-inline-block align-top" />
+                          </a>
+                        </Link>
+                      </div>
+                    </ListItem>
+                    <ListItem> </ListItem>
+                    <ListItem>
+                      <ListItemText primary="Menu" />
+                    </ListItem>
+                    <Link href="/">
+                      <a style={{ color: "#000000" }}>
+                        <ListItem button selected={selectedIndex === 0} onClick={(event) => handleListItemClick(event, 0)}>
+                          <ListItemIcon>
+                            <HomeRoundedIcon />
+                          </ListItemIcon>
+                          <ListItemText primary="Home" />
+                        </ListItem>
+                      </a>
+                    </Link>
+                    <Link href="/movies">
+                      <a style={{ color: "#000000" }}>
+                        <ListItem button selected={selectedIndex === 1} onClick={(event) => handleListItemClick(event, 1)}>
+                          <ListItemIcon>
+                            <TheatersRoundedIcon />
+                          </ListItemIcon>
+                          <ListItemText primary="Movies" />
+                        </ListItem>
+                      </a>
+                    </Link>
+                    <Link href={`/celebs`}>
+                      <a style={{ color: "#000000" }}>
+                        <ListItem button selected={selectedIndex === 2} onClick={(event) => handleListItemClick(event, 2)}>
+                          <ListItemIcon>
+                            <PeopleRoundedIcon />
+                          </ListItemIcon>
+                          <ListItemText primary="Celebs" />
+                        </ListItem>
+                      </a>
+                    </Link>
+                    <Link href="/about-us">
+                      <a style={{ color: "#000000" }}>
+                        <ListItem button selected={selectedIndex === 3} onClick={(event) => handleListItemClick(event, 3)}>
+                          <ListItemIcon>
+                            <InfoRoundedIcon />
+                          </ListItemIcon>
+                          <ListItemText primary="About Us" />
+                        </ListItem>
+                      </a>
+                    </Link>
+                  </List>
+                  <Divider />
+                  <List>
+                    <ListItem>
+                      <ListItemText primary="Apps" />
+                    </ListItem>
+                    <Link href="/celebs/celebs">
+                      <a style={{ color: "#000000" }}>
+                        <ListItem button selected={selectedIndex === 4} onClick={(event) => handleListItemClick(event, 4)}>
+                          <ListItemIcon>
+                            <PhoneIphoneRoundedIcon />
+                          </ListItemIcon>
+                          <ListItemText primary="Mobile Apps" />
+                        </ListItem>
+                      </a>
+                    </Link>
+                    <Link href="/celebs/celebs">
+                      <a style={{ color: "#000000" }}>
+                        <ListItem button selected={selectedIndex === 5} onClick={(event) => handleListItemClick(event, 5)}>
+                          <ListItemIcon>
+                            <DesktopWindowsRoundedIcon />
+                          </ListItemIcon>
+                          <ListItemText primary="Desktop Apps" />
+                        </ListItem>
+                      </a>
+                    </Link>
+                  </List>
+                </div>
+              </Drawer>
             </div>
-          </Nav>
+          </div>
+        </Nav>
       </>
     );
 }

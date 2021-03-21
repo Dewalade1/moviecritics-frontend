@@ -56,9 +56,9 @@ const PageNotFound = () => {
           </Button>
         </div >
         <div className={classes.container}>
-          <img src="\images\sys\404-error.jpg" alt="404"/>
+          <img src="https://res.cloudinary.com/hellodewa/image/upload/v1616334494/Moviecritics/images/sys/404-error_lqpmfn.jpg" alt="404"/>
           <Typography variant="h4" style={{color: "#FF4500"}} className="mt-4 pt-4 mb-4 pb-4"> <b>
-            Oops!! That page doesn't exist 
+            Sorry!! This page doesn't exist 
             </b>
           </Typography>
         </div>

@@ -24,14 +24,14 @@ export default function Layout({ children }) {
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@moviecriticsNg" />
         <meta property="og:url" content="https://moviecritics.vercel.app/" />
-        <meta property="og:image" content="./public/briij_logo_400x400.jpg" />
+        <meta property="og:image" content="https://res.cloudinary.com/hellodewa/image/upload/v1616334477/Moviecritics/images/logos/moviecritics-flavicon_se6axa.ico" />
         <meta property="og:description" content="Moviecritics is an online platform that provides the latest in Nigerian Entertainment to its users." />
 
         <meta property="og:site_name" content="Moviecritics" />
         <meta name="twitter:image:alt" content="Moviecritics" />
 
-        <link rel="shortcut icon" href="./images/favicon.png" />
-        <link rel="icon" href="/images/logos/moviecritics-flavicon.ico" />
+        <link rel="shortcut icon" href="https://res.cloudinary.com/hellodewa/image/upload/v1616334477/Moviecritics/images/logos/moviecritics-flavicon_se6axa.ico" />
+        <link rel="icon" href="https://res.cloudinary.com/hellodewa/image/upload/v1616334477/Moviecritics/images/logos/moviecritics-flavicon_se6axa.ico" />
 
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;500;600;700&display=swap" rel="stylesheet" />
