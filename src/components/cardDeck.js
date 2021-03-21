@@ -23,11 +23,11 @@ export default function MyCardDeck ( {cardData} ) {
           <Card key={tile.sys.id}>
             <Link href="#!">
               <a>
-                <Card.Img variant="top" src={tile.fields.img.fields.file.url ? tile.fields.img.fields.file.url : "/images/movies/defaults/default-poster-1.jpg"} alt={tile.title} height={230} />
+                <Card.Img variant="top" src={tile.fields.img.fields.file.url ? tile.fields.img.fields.file.url : "/images/movies/defaults/default-poster-1.jpg"} alt={tile.title} height={240} />
               </a>
             </Link>
             <Card.Body className="text-center pb-1">
-              <Card.Title style={{ height: "35px" }}>
+              <Card.Title style={{ height: "30px" }}>
                 <Link href="#!">
                   <a style={{ color: "#fd7e14" }}>
                     <h6>{tile.fields.title}</h6>
@@ -35,7 +35,6 @@ export default function MyCardDeck ( {cardData} ) {
                 </Link>
               </Card.Title>
               <Card.Text>
-                <p>{tile.fields.genre + " "}</p>
                 <p>{tile.fields.year}</p>
                 <Box component="fieldset" mb={2} borderColor="transparent">
                   <Rating name="read-only" value={tile.fields.ratings} precision={0.1} readOnly emptyIcon={<StarBorderIcon fontSize="inherit" />} />

@@ -33,7 +33,7 @@ import ThumbDownRoundedIcon from "@material-ui/icons/ThumbDownRounded";
 
 Axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
-export default function Celebs({celeb}) {
+export default function Celebs({celeb, relatedCelebs}) {
 
    const router = useRouter()
    const { Celebs } = router.query
@@ -49,6 +49,7 @@ export default function Celebs({celeb}) {
     
   return (
     <Layout>
+      {Boolean(celeb) ? (
       <div className="pl-4 pr-4 mb-4">
         <Row>
           <Col>
@@ -88,7 +89,7 @@ export default function Celebs({celeb}) {
                     </CardActions>
                   }
                   title={celeb.fields.name}
-                  subheader={celeb.fields.positions + '  '}
+                  subheader={celeb.fields.positions}
                 />
                 <MyCarousel tileData={celeb.fields.img1} />
                 <CardContent>
@@ -144,52 +145,20 @@ export default function Celebs({celeb}) {
               <CardContent>
                 <CardHeader title="Related Celebrities" />
                 <Typography variant="body2" className="pt-4" component="p" minheight={900}>
-                  <p className="ml-4 mb-4 mt-4">
-                    <a href="#" style={{ color: "#403f3f" }}>
-                      Dawn Thandeka King
-                    </a>
+                  {relatedCelebs.map((related) => { 
+                    <p className="ml-4 mb-4 mt-4">
+                      <a href={`/celebs/${related.url}`} style={{ color: "#403f3f" }}>
+                        {related.name}
+                      </a>
                   </p>
-                  <p className="ml-4 mb-4 mt-4">
-                    <a href="#" style={{ color: "#403f3f" }}>
-                      Tumi Morake
-                    </a>
-                  </p>
-                  <p className="ml-4 mb-4 mt-4">
-                    <a href="#" style={{ color: "#403f3f" }}>
-                      Idris Sultan
-                    </a>
-                  </p>
-                  <p className="ml-4 mb-4 mt-4">
-                    <a href="#" style={{ color: "#403f3f" }}>
-                      Fabian Adeoye Lojede
-                    </a>
-                  </p>
-                  <p className="ml-4 mb-4 mt-4">
-                    <a href="#" style={{ color: "#403f3f" }}>
-                      Uchemba Williams
-                    </a>
-                  </p>
-                  <p className="ml-4 mb-4 mt-4">
-                    <a href="#" style={{ color: "#403f3f" }}>
-                      Trevor Gumbi
-                    </a>
-                  </p>
-                  <p className="ml-4 mb-4 mt-4">
-                    <a href="#" style={{ color: "#403f3f" }}>
-                      Shaleen Surtie-Richards
-                    </a>
-                  </p>
-                  <p className="ml-4 mb-4 mt-4">
-                    <a href="#" style={{ color: "#403f3f" }}>
-                      Leroy Gopal
-                    </a>
-                  </p>
+                  })}
                 </Typography>
               </CardContent>
             </Card>
           </Col>
         </Row>
       </div>
+      ) : ''}
     </Layout>
   );
 }
@@ -197,9 +166,15 @@ export default function Celebs({celeb}) {
 export async function getStaticProps({ params }) {
   const rawCeleb = await singleEntryBySlug(params.celeb);
   const celeb = rawCeleb.[0]
-  console.log(celeb.fields.movies)
+  
+  const rawRelatedCelebs = await fetchEntries('celebs');
+  const relatedCelebs = await rawRelatedCelebs.map((relatedCeleb) => {
+    return {name: relatedCeleb.fields.name, url: relatedCeleb.fields.url};
+  });
 
-  return { props: { celeb } };
+  console.log(celeb.fields.positions)
+
+  return { props: { celeb, relatedCelebs } };
 }
 
 export async function getStaticPaths() {
