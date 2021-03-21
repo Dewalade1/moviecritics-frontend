@@ -49,7 +49,7 @@ const DialogActions = withStyles((theme) => ({
   },
 }))(MuiDialogActions);
 
-export default function DialogBtn( { btnData }) {
+export default function DialogBtn( { btnData, celebData }) {
   const [btnOpen, setBtnOpen] = useState(false);
 
   const handleClickOpen = () => {
@@ -60,22 +60,19 @@ export default function DialogBtn( { btnData }) {
   };
 
   return (
-    <div>
+    <div className={btnData.position == "right" ? "col-12 d-flex justify-content-end pr-4" : "col-12 d-flex"}>
       <Button size="small" color="primary" onClick={handleClickOpen} style={{ color: "#FF8C00" }}>
-        {btnData.btn.btnText}
+        {btnData.btnText}
       </Button>
-      <Dialog onClose={handleClose} aria-labelledby="max-width-dialog-title" open={btnOpen} fullWidth={btnData.btn.fullWidth} maxWidth={btnData.btn.maxWidth}>
+      <Dialog onClose={handleClose} aria-labelledby="max-width-dialog-title" open={btnOpen} fullWidth={btnData.fullWidth} maxWidth={btnData.maxWidth}>
         <DialogTitle id="max-width-dialog-title" onClose={handleClose} style={{ color: "#FF8C00" }}>
-          {btnData.name + "'s Bio"}
+          {celebData.name + "'s Bio"}
         </DialogTitle>
         <DialogContent dividers>
-          <Typography gutterBottom>In 1996, he made his major screen movie debut in the well received Silent Night after performing in a few Nigeria home videos (now widely known as Nollywood) projects which never got released due to lack of completion funds and related issues. Succeeded by numerous Nigerian home video projects where he mainly played romantic roles, from the 1990's through the early 2000's; Nouah was quickly labelled "Lover Boy". In 2004, he starred in Dangerous Twins (2004) and his stellar performance as a good and bad twin, Taiye and Kehinde, projected him as a multi layered actor capable of much more his "Lover Boy" image had suggested. By then, his fame had transcend the shores of Nigeria and was exceeding Africa.</Typography>
-          <Typography gutterBottom>His face was on numerous movie posters and his performance progressively got stronger and attracted acclaim as he sold millions of Nigerian home video (which was straight to DVD) projects within lovers of African entertainment. He is an African household name that won't be forgotten for his immense contribution to the African entertainment industry at large. In 2009, he portrayed a socially awkward fresh graduate in The Figurine (2009). He is often regarded as one of Africa's greatest actor of all time.</Typography>
-          <Typography gutterBottom>With an amazing talent and acting range, he has managed to remain new and fresh even after more than two decades in the industry. He has won numerous awards for his acting and contribution to the African entertainment industry in Nigeria and around the world. In 2010, he won Best Actor at the African Movie Academy Awards for his performance in The Figurine (2009).He is a one of the few active pioneers and ambassador of the laudable Nigerian movie industry also known as Nollywood. His burning desire to add to the creative growth of Nollywood and African cinema led to his founding a movie production company called Ramseyfilms.</Typography>
-          <Typography gutterBottom>Nouah blends developing slates of films under his production company with starring in various genres of films that appeals to him. In 2015, Nouah will be seen in '76 (2016).</Typography>
+          <Typography gutterBottom>{celebData.bio}</Typography>
         </DialogContent>
 
-        {btnData.btn.dialogFooterBtn ? (
+        {btnData.dialogFooterBtn ? (
           <DialogActions>
             <Button autoFocus onClick={handleClose} color="primary" style={{ color: "#FF8C00" }}>
               Cancel

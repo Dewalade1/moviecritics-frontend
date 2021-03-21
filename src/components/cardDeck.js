@@ -20,7 +20,7 @@ export default function MyCardDeck ( {cardData} ) {
     return (
       <CardDeck>
         {cardData.map((tile) => (
-          <Card key={tile.sys.id}>
+          <Card key={tile.sys.id}  variant="outlined">
             <Link href="#!">
               <a>
                 <Card.Img variant="top" src={tile.fields.img.fields.file.url ? tile.fields.img.fields.file.url : "/images/movies/defaults/default-poster-1.jpg"} alt={tile.title} height={240} />

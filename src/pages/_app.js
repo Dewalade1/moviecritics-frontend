@@ -13,16 +13,28 @@ export default function App({ Component, pageProps, err }) {
 
   const initialState = {
     index: 0,
+    infoBtn: {
+        btnText: "",
+        fullWidth: true,
+        maxWidth: "sm",
+        dialogFooterBtn: false,
+        position: "left",
+      },
     btn: {
       isClicked: false,
       isLikeClicked: false,
       isDislikeClicked: false,
       isFavClicked: false
-    }
+    },
   };
 
   function customReducer(draft, action) {
     switch (action.type) {
+      case "setAsLearnMoreBtn":
+        draft.infoBtn.btnText = "Learn More";
+        draft.infoBtn.maxWidth = "md";
+        draft.infoBtn.position = "right";
+        break;
       case "click":
         draft.btn.isClicked = !draft.btn.isClicked;
         break;

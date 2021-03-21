@@ -14,9 +14,9 @@ export default function MyCarousel({tileData}) {
     <>
     <Carousel activeIndex={index} onSelect={handleSelect}>
       {tileData.map((tile, index) => { 
-          return(           
+          return(          
             <Carousel.Item key={index}>
-                <Link href={tile.url ? tile.url : tile.fields.file.url}>
+                <Link href={tile.fields.description ? tile.fields.description : tile.fields.file.url}>
                   <a target="_blank">
                     <img
                         className="d-block w-100"
