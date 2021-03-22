@@ -13,6 +13,7 @@ export default function App({ Component, pageProps, err }) {
 
   const initialState = {
     index: 0,
+    navSelectedIndex: 999,
     infoBtn: {
         btnText: "",
         fullWidth: true,
@@ -34,6 +35,9 @@ export default function App({ Component, pageProps, err }) {
         draft.infoBtn.btnText = "Learn More";
         draft.infoBtn.maxWidth = "md";
         draft.infoBtn.position = "right";
+        break;
+      case "changeNavSelectedIndex":
+        draft.navSelectedIndex = action.index;
         break;
       case "click":
         draft.btn.isClicked = !draft.btn.isClicked;
