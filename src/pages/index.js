@@ -1,6 +1,4 @@
-import Link from 'next/link';
-
-import { Container, Row, Col, CardDeck } from "react-bootstrap";
+import { Row, Col, CardDeck } from "react-bootstrap";
 
 import Layout from '../layouts/layout';
 import MyCarousel from '../../src/components/carousel';
@@ -10,13 +8,12 @@ import { fetchEntries} from "../../public/data/config";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
 import CardContent from "@material-ui/core/CardContent";
-import CardActionArea from '@material-ui/core/CardActionArea';
 
 export default function Home({celebs, carouselData}) {
 
   return (
     <Layout>
-      <Card className="text-center"  variant="outlined" id="main-carousel">
+      <Card className="text-center"  variant="outlined" id="main-carouselgit">
         <MyCarousel tileData={carouselData} />
       </Card>
 
@@ -24,7 +21,7 @@ export default function Home({celebs, carouselData}) {
         <Col>
             <Card className="mb-4 pl-2" variant="outlined">
               <CardContent>
-                <CardHeader title="Celebrities" style={{color:"#FF8C00"}}/>
+                <CardHeader title="Celebrities" className="orange-color"/>
                   <CardDeck>
                     {celebs.map((data) => (
                         <CardList tileData={data} key={data.sys.id} />

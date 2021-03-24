@@ -102,26 +102,35 @@ const Footer = () => {
 
   return (
     <footer className={`font-small pt-4 mt-4`} id={footerStyles.footer}>
-      <div className="pr-4 pl-4 pt-4 mt-4 pb-4 mb-4">
+      <div className="pr-4 pl-4 pt-4 pb-4 mb-4">
         <Container fluid className="text-center text-md-left4 mr-4 ml-4 pl-4 pt-4 mt-4">
+          <div className="text-left mb-4">
+            <Link href="/">
+              <a>
+                <img src="https://res.cloudinary.com/hellodewa/image/upload/v1616575432/Moviecritics/images/logos/moviecritics-dark-grey-logo-transparent-background_k8fdw5.png" width={170} height={50} className="mb-4 ml-4 align-top" />
+              </a>
+            </Link>
+          </div>
           <Row>
             <Col md="2" className="text-left mt-4 pt-2">
               <ul>
-                <li className="list-unstyled text-decoration-none">
+                <li className="list-unstyled ">
                   <Link href="/privacy-policy">
                     <a className={footerStyles.link}>
-                      <SecurityIcon className={`ml-1 ${footerStyles.extraIcon}`} /> Privacy Policy
+                        <SecurityIcon className={`ml-1 ${footerStyles.extraIcon}`} />
+                      {" "}
+                      Privacy Policy
                     </a>
                   </Link>
                 </li>
-                <li className="list-unstyled text-decoration-none">
+                <li className="list-unstyled ">
                   <Link href="/terms">
                     <a className={footerStyles.link}>
                       <DescriptionRoundedIcon className={`ml-1 ${footerStyles.extraIcon}`} /> Terms
                     </a>
                   </Link>
                 </li>
-                <li className="list-unstyled text-decoration-none">
+                <li className="list-unstyled ">
                   <Link href="/help">
                     <a className={footerStyles.link}>
                       <HelpOutlineRoundedIcon className={`ml-1 mr-1 ${footerStyles.extraIcon}`} />
@@ -129,7 +138,7 @@ const Footer = () => {
                     </a>
                   </Link>
                 </li>
-                <li className="list-unstyled text-decoration-none">
+                <li className="list-unstyled ">
                   <Link href="/contacts">
                     <a className={footerStyles.link}>
                       <MailOutlineRoundedIcon className={`ml-1 mr-1 ${footerStyles.extraIcon}`} />
@@ -142,7 +151,7 @@ const Footer = () => {
             <Col md="2" className="text-left">
               <h6 className={`pl-4 ml-2 ${footerStyles.title}`}>Quick links</h6>
               <ul>
-                <li className="list-unstyled text-decoration-none">
+                <li className="list-unstyled ">
                   <Link href="/">
                     <a className={footerStyles.link}>
                       {" "}
@@ -151,7 +160,7 @@ const Footer = () => {
                     </a>
                   </Link>
                 </li>
-                <li className="list-unstyled text-decoration-none">
+                <li className="list-unstyled ">
                   <Link href="/about-us">
                     <a className={footerStyles.link}>
                       {" "}
@@ -160,7 +169,7 @@ const Footer = () => {
                     </a>
                   </Link>
                 </li>
-                <li className="list-unstyled text-decoration-none">
+                <li className="list-unstyled ">
                   <Link href="/celebs/celebs">
                     <a className={footerStyles.link}>
                       {" "}
@@ -169,7 +178,7 @@ const Footer = () => {
                     </a>
                   </Link>
                 </li>
-                <li className="list-unstyled text-decoration-none">
+                <li className="list-unstyled ">
                   <Link href="/genre">
                     <a className={footerStyles.link}>
                       {" "}
@@ -183,7 +192,7 @@ const Footer = () => {
             <Col md="2" className="text-left">
               <h6 className={`pl-4 ml-2 ${footerStyles.title}`}>Our Apps</h6>
               <ul>
-                <li className="list-unstyled text-decoration-none">
+                <li className="list-unstyled ">
                   <Link href="/app/android">
                     <a className={footerStyles.link}>
                       {" "}
@@ -192,7 +201,7 @@ const Footer = () => {
                     </a>
                   </Link>
                 </li>
-                <li className="list-unstyled text-decoration-none">
+                <li className="list-unstyled ">
                   <Link href="/app/ios">
                     <a className={footerStyles.link}>
                       {" "}
@@ -201,7 +210,7 @@ const Footer = () => {
                     </a>
                   </Link>
                 </li>
-                <li className="list-unstyled text-decoration-none">
+                <li className="list-unstyled ">
                   <Link href="/app/desktop">
                     <a className={footerStyles.link}>
                       {" "}
@@ -213,9 +222,9 @@ const Footer = () => {
             </Col>
 
             <Col md="2" className="text-left">
-              <h6 className={`pl-4 ml-2 ${footerStyles.title}`}>Tops</h6>
+              <h6 className={`pl-4 ml-1 ${footerStyles.title}`}>Tops</h6>
               <ul>
-                <li className="list-unstyled text-decoration-none">
+                <li className="list-unstyled ">
                   <Link href="/tops/movies">
                     <a className={footerStyles.link}>
                       <TheatersOutlinedIcon className={`mr-1 ${footerStyles.topsIcon}`} />
@@ -223,7 +232,7 @@ const Footer = () => {
                     </a>
                   </Link>
                 </li>
-                <li className="list-unstyled text-decoration-none">
+                <li className="list-unstyled ">
                   <Link href="/tops/celebs">
                     <a className={footerStyles.link}>
                       <AccountCircleOutlinedIcon className={`mr-1 ${footerStyles.topsIcon}`} />
@@ -231,7 +240,7 @@ const Footer = () => {
                     </a>
                   </Link>
                 </li>
-                <li className="list-unstyled text-decoration-none">
+                <li className="list-unstyled ">
                   <Link href="/tops/genres">
                     <a className={footerStyles.link}>
                       <BarChartRoundedIcon className={`mr-1 ${footerStyles.topsIcon}`} />
@@ -245,7 +254,7 @@ const Footer = () => {
             <Col md="2" className="text-left">
               <h6 className={`pl-4 ml-2 ${footerStyles.title}`}>Movies</h6>
               <ul>
-                <li className="list-unstyled text-decoration-none">
+                <li className="list-unstyled ">
                   <Link href="/movies/yoruba">
                     <a className={footerStyles.link}>
                       <RemoveFromQueueOutlinedIcon className={`mr-2 ${footerStyles.moviesIcon}`} />
@@ -253,7 +262,7 @@ const Footer = () => {
                     </a>
                   </Link>
                 </li>
-                <li className="list-unstyled text-decoration-none">
+                <li className="list-unstyled ">
                   <Link href="/movies/igbo">
                     <a className={footerStyles.link}>
                       <AddToQueueOutlinedIcon className={`mr-2 ${footerStyles.moviesIcon}`} />
@@ -261,7 +270,7 @@ const Footer = () => {
                     </a>
                   </Link>
                 </li>
-                <li className="list-unstyled text-decoration-none">
+                <li className="list-unstyled ">
                   <Link href="/movies/hausa">
                     <a className={footerStyles.link}>
                       <PersonalVideoOutlinedIcon className={`mr-2 ${footerStyles.moviesIcon}`} />
@@ -269,7 +278,7 @@ const Footer = () => {
                     </a>
                   </Link>
                 </li>
-                <li className="list-unstyled text-decoration-none">
+                <li className="list-unstyled ">
                   <Link href="/movies/christian">
                     <a className={footerStyles.link}>
                       <TvOutlinedIcon className={`mr-2 ${footerStyles.moviesIcon}`} />
@@ -277,7 +286,7 @@ const Footer = () => {
                     </a>
                   </Link>
                 </li>
-                <li className="list-unstyled text-decoration-none">
+                <li className="list-unstyled ">
                   <Link href="/movies/islamic">
                     <a className={footerStyles.link}>
                       <OndemandVideoOutlinedIcon className={`mr-2 ${footerStyles.moviesIcon}`} />
@@ -291,35 +300,35 @@ const Footer = () => {
             <Col md="2" className="text-left">
               <h6 className={`pl-4 ml-1 ${footerStyles.title}`}>Follow us</h6>
               <ul>
-                <li className="list-unstyled text-decoration-none">
+                <li className="list-unstyled ">
                   <Link href="#!">
                     <a className={footerStyles.link}>
                       <FacebookIcon className={footerStyles.followUsIcon} /> Facebook
                     </a>
                   </Link>
                 </li>
-                <li className="list-unstyled text-decoration-none">
+                <li className="list-unstyled ">
                   <Link href="#!">
                     <a className={footerStyles.link}>
                       <TwitterIcon className={footerStyles.followUsIcon} /> Twitter
                     </a>
                   </Link>
                 </li>
-                <li className="list-unstyled text-decoration-none">
+                <li className="list-unstyled ">
                   <Link href="#!">
                     <a className={footerStyles.link}>
                       <InstagramIcon className={footerStyles.followUsIcon} /> Instagram
                     </a>
                   </Link>
                 </li>
-                <li className="list-unstyled text-decoration-none">
+                <li className="list-unstyled ">
                   <Link href="#!">
                     <a className={footerStyles.link}>
                       <YouTubeIcon className={footerStyles.followUsIcon} /> YouTube
                     </a>
                   </Link>
                 </li>
-                <li className="list-unstyled text-decoration-none">
+                <li className="list-unstyled ">
                   <Link href="#!">
                     <a className={footerStyles.link}>
                       <RedditIcon className={footerStyles.followUsIcon} /> Reddit
@@ -392,7 +401,7 @@ const Footer = () => {
                 <h6>
                   &copy; {new Date().getFullYear()}{" "}
                   <Link href="#">
-                    <a className={`text-decoration-none pr-4 mr-4 ${footerStyles.link}`}> Ellopod Consulting </a>
+                    <a className={` pr-4 mr-4 ${footerStyles.link}`}> Ellopod Consulting </a>
                   </Link>
                   Made in Lagos, Nigeria
                 </h6>

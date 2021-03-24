@@ -1,5 +1,7 @@
 import Head from "next/head";
 
+import layoutStyles from "../../styles/layout/layout.module.css";
+
 import Fab from "@material-ui/core/Fab";
 import ForumRoundedIcon from "@material-ui/icons/ForumRounded";
 import ExpandLessRoundedIcon from "@material-ui/icons/ExpandLessRounded";
@@ -41,12 +43,12 @@ export default function Layout({ children }) {
       <div className="ml-4 pl-4 mr-4 pr-4 mt-lg-4 pt-4">
         <main className="ml-4 pl-4 mr-4 pr-4 mt-lg-4 pt-4">{children}</main>
       </div>
-      <div className="mr-4" style={{ position: "fixed", zindex: 999, bottom: "50px", right: "50px" }}>
-        <Fab color="primary" aria-label="back to top" className="mr-4 mb-4" style={{ background: "#ffa600", display: "block" }}>
-          <ExpandLessRoundedIcon />
-        </Fab>
-        <Fab color="primary" aria-label="chat" className=" mr-4 mb-3" style={{ background: "#fd7e14", display: "block" }}>
+      <div className="mr-4" id={layoutStyles.toolsIconsDiv}>
+        <Fab color="primary" aria-label="chat" className=" mr-4 mb-3" id={layoutStyles.chatIcon}>
           <ForumRoundedIcon />
+        </Fab>
+        <Fab color="primary" aria-label="back to top" className="mr-4 mb-4" id={layoutStyles.backToTopIcon}>
+          <ExpandLessRoundedIcon />
         </Fab>
       </div>
       <Footer />

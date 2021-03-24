@@ -51,3 +51,20 @@ a {
 .movie-header-wrapper > div > a > img{
   width:106px;
  }
+
+ /* COLORS */
+ .orange-color {
+   color:#FF8C00;
+ }
+
+ /* BUTTONS */
+
+ .orange-button {
+    background: #FF8C00;
+    color: #d6dbef;
+}
+
+.orange-button:hover {
+    background: #d37708;
+    color: #e4e9fd;
+}

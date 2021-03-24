@@ -13,6 +13,11 @@
 
 #orangeFooterButton {
     background: #FF8C00;
+    color: #d6dbef;
+}
+
+#orangeFooterButton:hover {
+    background: #d37708;
     color: #e4e9fd;
 }
 
@@ -26,7 +31,7 @@
     color: #4f4e4e;
 }
 
-.extraIcon :hover {
+.extraIcon:hover {
     color: #f3bdd7;
 }
 
@@ -34,7 +39,7 @@
     color: #4f4e4e;
 }
 
-.topsIcon :hover {
+.topsIcon:hover {
     color: #f3ee18;
 }
 
@@ -42,7 +47,7 @@
     color: #4f4e4e;
 }
 
-.moviesIcon :hover {
+.moviesIcon:hover {
     color: #3fd2d9;
 }
 
@@ -50,15 +55,15 @@
     color: #4f4e4e;
 }
 
-.quickLinksIcon :hover {
-    color: #c2d9b6;
+.quickLinksIcon:hover {
+    color: #30f303;
 }
 
 .ourAppsIcon {
     color: #4f4e4e;
 }
 
-.ourAppsIcon :hover {
+.ourAppsIcon:hover {
     color: #b4d0e9;
 }
 
@@ -66,18 +71,48 @@
     color: #4f4e4e;
 }
 
-.followUsIcon :hover {
+.followUsIcon:hover {
     color: #f5877f;
 }
 
 /* LINKS */
 
 .link {
-    color: #e4e9fd;
+    color: #d7dcef;
     text-decoration: none;
 }
 
 .link:hover {
     color: #ffffff;
     text-decoration: none;
+}
+
+.link:hover > .extraIcon {
+    color: #f3bdd7;
+    display: inline-block;
+}
+
+.link:hover > .quickLinksIcon {
+    color: #30f303;
+    display: inline-block;
+}
+
+.link:hover > .topsIcon {
+    color: #f3ee18;
+    display: inline-block;
+}
+
+.link:hover > .moviesIcon {
+    color: #3fd2d9;
+    display: inline-block;
+}
+
+.link:hover > .ourAppsIcon {
+    color: #b4d0e9;
+    display: inline-block;
+}
+
+.link:hover > .followUsIcon {
+    color: #f5877f;
+    display: inline-block;
 }
