@@ -1,0 +1,83 @@
+/* MAIN FOOTER */
+
+#footer {
+    background: #4f4e4e;
+    color: #ffffff;
+    clip-path: polygon(0 0,100% 20%,100% 100%,0% 100%);
+}
+
+#bottomFooter {
+    background: #403f3f;
+    color: #A9A9A9;
+}
+
+#orangeFooterButton {
+    background: #FF8C00;
+    color: #e4e9fd;
+}
+
+.title {
+    color: #A9A9A9;
+}
+
+/* ICONS */
+
+.extraIcon {
+    color: #4f4e4e;
+}
+
+.extraIcon :hover {
+    color: #f3bdd7;
+}
+
+.topsIcon {
+    color: #4f4e4e;
+}
+
+.topsIcon :hover {
+    color: #f3ee18;
+}
+
+.moviesIcon {
+    color: #4f4e4e;
+}
+
+.moviesIcon :hover {
+    color: #3fd2d9;
+}
+
+.quickLinksIcon {
+    color: #4f4e4e;
+}
+
+.quickLinksIcon :hover {
+    color: #c2d9b6;
+}
+
+.ourAppsIcon {
+    color: #4f4e4e;
+}
+
+.ourAppsIcon :hover {
+    color: #b4d0e9;
+}
+
+.followUsIcon {
+    color: #4f4e4e;
+}
+
+.followUsIcon :hover {
+    color: #f5877f;
+}
+
+/* LINKS */
+
+.link {
+    color: #e4e9fd;
+    text-decoration: none;
+}
+
+.link:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
