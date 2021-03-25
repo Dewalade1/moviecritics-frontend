@@ -54,7 +54,7 @@ a {
 
  /* COLORS */
  .orange-color {
-   color:#FF8C00;
+   color:#f38704;
  }
 
  /* BUTTONS */
@@ -67,4 +67,16 @@ a {
 .orange-button:hover {
     background: #d37708;
     color: #e4e9fd;
+}
+
+/* PARAGRAPHS */
+
+.paragraph-font {
+  font-size: 20px;
+}
+
+/* HEADINGS */
+
+.subheading {
+  color: #cf8701;
 }
