@@ -8,13 +8,21 @@ import { fetchEntries} from "../../public/data/config";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
 import CardContent from "@material-ui/core/CardContent";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles({
+  root: {
+    borderRadius: 14,
+  }
+});
 
 export default function Home({celebs, carouselData}) {
+  const classes = useStyles();
 
   return (
     <Layout>
-      <Card className="text-center"  variant="outlined" id="main-carouselgit">
-        <MyCarousel tileData={carouselData} />
+      <Card className={`text-center ${classes.root}`}  variant="outlined" id="main-carouselgit">
+        <MyCarousel tileData={carouselData} home />
       </Card>
 
       <Row className="mt-4" id="celebrities">

@@ -65,7 +65,7 @@ a {
 }
 
 .orange-button:hover {
-    background: #d37708;
+    background: #ffa753;
     color: #e4e9fd;
 }
 
@@ -79,4 +79,10 @@ a {
 
 .subheading {
   color: #cf8701;
+}
+
+/* CAROUSELS */
+
+.caption-area {
+  z-index: 999999;
 }
