@@ -21,8 +21,11 @@ import TheatersRoundedIcon from '@material-ui/icons/TheatersRounded';
 import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
 import InfoRoundedIcon from '@material-ui/icons/InfoRounded';
 import MenuRoundedIcon from "@material-ui/icons/MenuRounded";
+import Filter1RoundedIcon from "@material-ui/icons/Filter1Rounded";
 import DesktopWindowsRoundedIcon from '@material-ui/icons/DesktopWindowsRounded';
 import PhoneIphoneRoundedIcon from '@material-ui/icons/PhoneIphoneRounded';
+
+import navStyles from "../../../styles/layout/nav.module.css";
 
 import StateContext from '../contexts/stateContext';
 import DispatchContext from '../contexts/dispatchContext';
@@ -31,7 +34,7 @@ import DispatchContext from '../contexts/dispatchContext';
 const useStyles = makeStyles({
   list: {
     width: 260,
-    paddingLeft: "10px",
+    paddingLeft: "1px",
   },
   fullList: {
     width: 'auto',
@@ -67,10 +70,9 @@ export default function MainNav () {
       <>
         <Navbar.Brand href="/">
           <div className="ml-4 pl-4">
-            <img src="https://res.cloudinary.com/hellodewa/image/upload/v1616334478/Moviecritics/images/logos/moviecritics-logo-white-background_kisl9f.png" width={140} height={40} className="d-inline-block align-top" />
+            <img src="https://res.cloudinary.com/hellodewa/image/upload/v1616559517/Moviecritics/images/logos/moviecritics-logo-transparent-background_sjnfhk.png" width={140} height={40} className="d-inline-block align-top" />
           </div>
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Nav className="mr-auto">
           <div>
             <div>
@@ -80,59 +82,73 @@ export default function MainNav () {
               </Button>
               <Drawer anchor={"left"} open={state["left"]} onClose={toggleDrawer("left", false)}>
                 <div className={clsx(classes.list)} role="presentation" onClick={toggleDrawer("left", false)} onKeyDown={toggleDrawer("left", false)}>
-                  <List  component="nav" aria-label="app logo">
+                  <List component="nav" aria-label="app logo">
                     <ListItem>
                       <div className="ml-sm-6 pb-2 pt-4">
                         <Link href="/">
                           <a>
-                            <img src="https://res.cloudinary.com/hellodewa/image/upload/v1616334478/Moviecritics/images/logos/moviecritics-logo-white-background_kisl9f.png" width={140} height={40} className="d-inline-block align-top" />
+                            <img src="https://res.cloudinary.com/hellodewa/image/upload/v1616559517/Moviecritics/images/logos/moviecritics-logo-transparent-background_sjnfhk.png" width={140} height={40} className="d-inline-block align-top" />
                           </a>
                         </Link>
                       </div>
                     </ListItem>
                   </List>
                   <Divider />
-                  <List  component="nav" aria-label="primary app navItems" aria-labelledby="nested-list-subheader"
+                  <List
+                    component="nav"
+                    aria-label="primary app navItems"
+                    aria-labelledby="nested-list-subheader"
                     subheader={
-                    <ListSubheader component="h4" id="primary-app-nav-items">
-                      Menu
-                    </ListSubheader>
-                  }>
+                      <ListSubheader component="h4" id="primary-app-nav-items">
+                        Menu
+                      </ListSubheader>
+                    }
+                  >
                     <Link href="/">
-                      <a selected={appDispatch.navSelectedIndex == 0} onClick={(event) => handleListItemClick(event, 0)} style={{ color: "#000000", textDecoration: 'none' }}>
-                        <ListItem button >
+                      <a className={navStyles.navLink}>
+                        <ListItem button selected={appState.navSelectedIndex == 0} onClick={(event) => handleListItemClick(event, 0)}>
                           <ListItemIcon>
-                            <HomeRoundedIcon />
+                            <HomeRoundedIcon className={navStyles.navLink} />
                           </ListItemIcon>
                           <ListItemText primary="Home" />
                         </ListItem>
                       </a>
                     </Link>
-                    <Link href="/movies" selected={appDispatch.navSelectedIndex == 1} onClick={(event) => handleListItemClick(event, 1)} >
-                       <a style={{ color: "#000000", textDecoration: 'none' }}>
-                        <ListItem button >
+                    <Link href="/movies">
+                      <a className={navStyles.navLink}>
+                        <ListItem button selected={appState.navSelectedIndex == 1} onClick={(event) => handleListItemClick(event, 1)}>
                           <ListItemIcon>
-                            <TheatersRoundedIcon />
+                            <TheatersRoundedIcon className={navStyles.navLink} />
                           </ListItemIcon>
-                          <ListItemText primary="Movies"/>
+                          <ListItemText primary="Movies" />
                         </ListItem>
                       </a>
                     </Link>
-                    <Link href={`/celebs`} selected={appDispatch.navSelectedIndex == 2} onClick={(event) => handleListItemClick(event, 2)}>
-                      <a style={{ color: "#000000", textDecoration: 'none' }} >
-                        <ListItem button >
+                    <Link href="/celebs">
+                      <a className={navStyles.navLink}>
+                        <ListItem button selected={appState.navSelectedIndex == 2} onClick={(event) => handleListItemClick(event, 2)}>
                           <ListItemIcon>
-                            <PeopleRoundedIcon />
+                            <PeopleRoundedIcon className={navStyles.navLink} />
                           </ListItemIcon>
                           <ListItemText primary="Celebs" />
                         </ListItem>
                       </a>
                     </Link>
-                    <Link href="/about-us" selected={appDispatch.navSelectedIndex == 3} onClick={(event) => handleListItemClick(event, 3)}>
-                      <a style={{ color: "#000000", textDecoration: 'none' }}>
-                        <ListItem button >
+                    <Link href="/top-ranking">
+                      <a className={navStyles.navLink}>
+                        <ListItem button selected={appState.navSelectedIndex == 3} onClick={(event) => handleListItemClick(event, 3)}>
                           <ListItemIcon>
-                            <InfoRoundedIcon />
+                            <Filter1RoundedIcon className={navStyles.navLink} />
+                          </ListItemIcon>
+                          <ListItemText primary="Top Ranking" />
+                        </ListItem>
+                      </a>
+                    </Link>
+                    <Link href="/about-us">
+                      <a className={navStyles.navLink}>
+                        <ListItem button selected={appState.navSelectedIndex == 4} onClick={(event) => handleListItemClick(event, 4)}>
+                          <ListItemIcon>
+                            <InfoRoundedIcon className={navStyles.navLink} />
                           </ListItemIcon>
                           <ListItemText primary="About Us" />
                         </ListItem>
@@ -140,27 +156,31 @@ export default function MainNav () {
                     </Link>
                   </List>
                   <Divider />
-                  <List  component="nav" aria-label="secondary app navItems" aria-labelledby="nested-list-subheader"
+                  <List
+                    component="nav"
+                    aria-label="secondary app navItems"
+                    aria-labelledby="nested-list-subheader"
                     subheader={
-                    <ListSubheader component="h4" id="secondary-app-nav-items">
-                      Apps
-                    </ListSubheader>
-                  }>
-                    <Link href="/apps-mobile"  selected={appDispatch.navSelectedIndex == 4} onClick={(event) => handleListItemClick(event, 4)}>
-                      <a style={{ color: "#000000", textDecoration: 'none' }}>
-                        <ListItem button>
+                      <ListSubheader component="h4" id="secondary-app-nav-items">
+                        Apps
+                      </ListSubheader>
+                    }
+                  >
+                    <Link href="/apps-mobile">
+                      <a className={navStyles.navLink}>
+                        <ListItem button selected={appState.navSelectedIndex == 5} onClick={(event) => handleListItemClick(event, 5)}>
                           <ListItemIcon>
-                            <PhoneIphoneRoundedIcon />
+                            <PhoneIphoneRoundedIcon className={navStyles.navLink} />
                           </ListItemIcon>
                           <ListItemText primary="Mobile Apps" />
                         </ListItem>
                       </a>
                     </Link>
-                    <Link href="/apps-desktop"  selected={appDispatch.navSelectedIndex == 5} onClick={(event) => handleListItemClick(event, 5)}>
-                      <a style={{ color: "#000000", textDecoration: 'none' }}>
-                        <ListItem button>
+                    <Link href="/apps-desktop">
+                      <a className={navStyles.navLink}>
+                        <ListItem button selected={appState.navSelectedIndex == 6} onClick={(event) => handleListItemClick(event, 6)}>
                           <ListItemIcon>
-                            <DesktopWindowsRoundedIcon />
+                            <DesktopWindowsRoundedIcon className={navStyles.navLink} />
                           </ListItemIcon>
                           <ListItemText primary="Desktop Apps" />
                         </ListItem>

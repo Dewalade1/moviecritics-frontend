@@ -3,9 +3,8 @@ import {useState} from 'react';
 import MainNav from '../shared/nav';
 
 import {Navbar} from 'react-bootstrap';
-import {Form, FormControl, InputGroup, Col } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 
-import Menu from "@material-ui/core/Menu";
 import Badge from "@material-ui/core/Badge";
 import Button from "@material-ui/core/Button";
 import Divider from "@material-ui/core/Divider";
@@ -19,7 +18,6 @@ import { fade, makeStyles, withStyles, createMuiTheme, ThemeProvider } from '@ma
 
 import Select from '@material-ui/core/Select';
 import InputLabel from '@material-ui/core/InputLabel';
-import FormHelperText from '@material-ui/core/FormHelperText';
 
 import SearchRoundedIcon from '@material-ui/icons/SearchRounded';
 import TurnedInNotRoundedIcon from '@material-ui/icons/TurnedInNotRounded';
@@ -54,19 +52,23 @@ const BootstrapInput = withStyles((theme) => ({
   },
 }))(InputBase);
 
-const useStyles = makeStyles((theme) => ({
-  formControl: {
-    margin: theme.spacing(1),
-    minWidth: 120,
+const useStyles = makeStyles(() => ({
+  search: {
+    background: "#ffffff",
   },
-  selectEmpty: {
-    marginTop: theme.spacing(2),
+  orangeButton: {
+    background: "#f38704",
+    color: "#ffffff",
+    "&:hover": {
+      background: "#ffa753",
+      color: "#e4e9fd",
+    },
   },
 }));
 
 function Header () {
 
-    const classes = useStyles();
+  const styles = useStyles();
   const [searchParam, setSearchParam] = useState(10);
 
   const handleChange = (event) => {
@@ -82,7 +84,7 @@ function Header () {
             <ThemeProvider theme={theme}>
               <TextField
                 margin="dense"
-                id="search"
+                className={styles.search}
                 placeholder="Search Moviecritics..."
                 type="text"
                 InputProps={{
@@ -105,13 +107,12 @@ function Header () {
                 }}
                 variant="outlined"
                 fullWidth
-                style={{ background: "#ffffff" }}
               />
             </ThemeProvider>
           </Col>
 
           <IconButton aria-label="notifications" component="span" className="ml-2 mr-2">
-            <Badge badgeContent={9} color="error">
+            <Badge badgeContent={99} color="error">
               <NotificationsRoundedIcon />
             </Badge>
           </IconButton>
@@ -121,9 +122,11 @@ function Header () {
               <TurnedInNotRoundedIcon /> Watchlist
             </Button>
             <Button className="ml-sm-4">Login</Button>
-            <Button variant="contained" style={{ background: "#FF8C00" }} color="primary" component="span" className="mr-4 ml-4">
-              Sign up
-            </Button>
+            <ThemeProvider theme={theme}>
+              <Button variant="contained" className={`${styles.orangeButton} mr-4 ml-4`} color="primary" component="span">
+                Sign up
+              </Button>
+            </ThemeProvider>
           </div>
         </Navbar>
       </>

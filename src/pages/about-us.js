@@ -57,7 +57,7 @@ export default function AboutUs () {
                   <b>Want find out more?</b>
                 </h3>
                 <p className="ml-4 mr-4">Just shoot us a message to learn more about us or drop a suggestion. We'll be sure to get in touch with you as soon as possible</p>
-                <Button className={`${classes.orangeButton} mt-4 mb-4`} variant='primary' href="/contact-us">
+                <Button className={`${classes.orangeButton} mt-4 mb-4`} variant='primary' href="/contact">
                   Contact Us
                 </Button>
               </CardContent>

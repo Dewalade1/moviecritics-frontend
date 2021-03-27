@@ -139,7 +139,7 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li className="list-unstyled ">
-                  <Link href="/contacts">
+                  <Link href="/contact">
                     <a className={footerStyles.link}>
                       <MailOutlineRoundedIcon className={`ml-1 mr-1 ${footerStyles.extraIcon}`} />
                       Contact Us

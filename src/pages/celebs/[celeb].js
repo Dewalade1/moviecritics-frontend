@@ -43,23 +43,22 @@ Axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded
 
 export default function Celebs({celeb, otherCelebs}) {
 
-  const appDispatch = useContext(DispatchContext)
-  const appState = useContext(StateContext)
-  const router = useRouter()
+  const appDispatch = useContext(DispatchContext);
+  const appState = useContext(StateContext);
+  const router = useRouter();
   const { Celebs } = router.query
   
   useEffect( () => {
-    appDispatch({type: "setAsLearnMoreBtn"})
-  }, [])
+    appDispatch({type: "setAsLearnMoreBtn"});
+  }, []);
     
   return (
     <Layout>
       {Boolean(celeb) ? (
-      <div className="pl-4 pr-4 mb-4">
-        <Row>
-          <Col>
-            <Card className="mt-4 mb-4" variant="outlined">
-              <CardActionArea>
+        <div className="pl-4 pr-4 mb-4">
+          <Row>
+            <Col>
+              <Card className="mt-4 mb-4" variant="outlined">
                 <CardHeader
                   avatar={
                     <Avatar aria-label="recipe">
@@ -98,78 +97,78 @@ export default function Celebs({celeb, otherCelebs}) {
                 />
                 <MyCarousel tileData={celeb.fields.img1} />
                 <CardContent className="mt-4">
-                  <Typography gutterBottom variant="h4" component="h2" style={{color:"#FF8C00"}}>
+                  <Typography gutterBottom variant="h4" component="h2" className="orange-color">
                     Bio
                   </Typography>
                   <Typography variant="body2" color="textSecondary" component="p" noWrap>
                     {celeb.fields.bio}
                   </Typography>
                 </CardContent>
-              </CardActionArea>
-              <CardActions>
-                <DialogBtn btnData={appState.infoBtn} celebData={celeb.fields}/>
-              </CardActions>
-            </Card>
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <Card className="mb-4" variant="outlined">
-              <CardContent>
-                <CardHeader title="Photos" style={{color:"#FF8C00"}}/>
-                <ImageGridList imgData={celeb.fields.img1} />
-              </CardContent>
-            </Card>
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <Card className="mb-4" variant="outlined">
-              <CardContent>
-                <CardHeader title="Top Rated Movies" style={{color:"#FF8C00"}}/>
-                <MyCardDeck cardData={celeb.fields.movies} />
-              </CardContent>
-            </Card>
-          </Col>
-        </Row>
-        <Row>
-          <Col md={9}>
-            <Card className="mb-4" variant="outlined">
-              <CardContent>
-                <CardHeader title="Filmology" style={{color:"#FF8C00"}} />
-                <Divider flexItem />
-                <CardMedia key={1} component="img" alt="Filmology List" image="https://res.cloudinary.com/hellodewa/image/upload/v1616334474/Moviecritics/images/celebs/Ramsey-Noah/ramson-filmology_wewd3t.png" />
-              </CardContent>
-              <CardActions >
-                <DialogBtn btnData={appState.infoBtn} celebData={celeb.fields}/>
-              </CardActions>
-            </Card>
-          </Col>
-          <Col md={3}>
-            <Card className="mb-4" style={{ height: "64em" }} variant="outlined">
-              <CardHeader title="Other Celebrities" style={{color:"#FF8C00"}}/>
-              <CardContent children="true">
-                  {otherCelebs ? (
-                    otherCelebs.map((others) => { 
-                      <Link href={`/celebs/${others.url}`} >
-                        <a>
-                          <Card key={others.id} variant="outlined">
-                            <CardHeader title={others.name}/>
-                            <CardContent>
-                          <Typography variant="body1" color="text-secondary" className="pt-4 mb-4" component="p" minheight={900}>
-                            {others.name}
-                          </Typography>
-                          </CardContent>
-                          </Card>
-                        </a>
-                      </Link>
-                  })) : ""}
-              </CardContent>
-            </Card>
-          </Col>
-        </Row>
-      </div>
-      ) : ''}
+                <CardActions>
+                  <DialogBtn btnData={appState.infoBtn} celebData={celeb.fields} />
+                </CardActions>
+              </Card>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <Card className="mb-4" variant="outlined">
+                <CardContent>
+                  <CardHeader title="Photos" className="orange-color" />
+                  <ImageGridList imgData={celeb.fields.img1} />
+                </CardContent>
+              </Card>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <Card className="mb-4" variant="outlined">
+                <CardContent>
+                  <CardHeader title="Top Rated Movies" className="orange-color" />
+                  <MyCardDeck cardData={celeb.fields.movies} />
+                </CardContent>
+              </Card>
+            </Col>
+          </Row>
+          <Row>
+            <Col md={9}>
+              <Card className="mb-4" variant="outlined">
+                <CardContent>
+                  <CardHeader title="Filmology" className="orange-color" />
+                  <Divider flexItem />
+                  <CardMedia key={1} component="img" alt="Filmology List" image="https://res.cloudinary.com/hellodewa/image/upload/v1616334474/Moviecritics/images/celebs/Ramsey-Noah/ramson-filmology_wewd3t.png" />
+                </CardContent>
+                <CardActions>
+                  <DialogBtn btnData={appState.infoBtn} celebData={celeb.fields} />
+                </CardActions>
+              </Card>
+            </Col>
+            <Col md={3}>
+              <Card className="mb-4" style={{ height: "64em" }} variant="outlined">
+                <CardHeader title="Other Celebrities" className="orange-color" />
+                  {otherCelebs
+                    ? otherCelebs.map((others) => {
+                        <Link href={`/celebs/${others.url}`}>
+                          <a>
+                            <Card key={others.id} variant="outlined">
+                              <CardHeader title={others.name} />
+                              <CardContent>
+                                <Typography variant="body1" color="text-secondary" className="pt-4 mb-4" component="p" minheight={900}>
+                                  {others.name}
+                                </Typography>
+                              </CardContent>
+                            </Card>
+                          </a>
+                        </Link>;
+                      })
+                    : ""}
+              </Card>
+            </Col>
+          </Row>
+        </div>
+      ) : (
+        ""
+      )}
     </Layout>
   );
 }
