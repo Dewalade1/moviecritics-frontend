@@ -86,3 +86,15 @@ a {
 .caption-area {
   z-index: 999999;
 }
+
+/* LINKS */
+
+.link {
+  color: #f38704;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: #ffa753;
+  text-decoration: none;
+}

@@ -2,9 +2,9 @@ import React from 'react';
 
 import Link from 'next/link';
 
-import styles from '../../styles/contact.module.css';
-
 import Layout from '../layouts/layout';
+
+import styles from "../../styles/contact.module.css";
 
 import { Row, Col } from "react-bootstrap";
 
@@ -13,7 +13,6 @@ import Button from "@material-ui/core/Button";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import TextField from "@material-ui/core/TextField";
-import TextareaAutosize from "@material-ui/core/TextareaAutosize";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
