@@ -117,9 +117,7 @@ const Footer = () => {
                 <li className="list-unstyled ">
                   <Link href="/privacy-policy">
                     <a className={footerStyles.link}>
-                        <SecurityIcon className={`ml-1 ${footerStyles.extraIcon}`} />
-                      {" "}
-                      Privacy Policy
+                      <SecurityIcon className={`ml-1 ${footerStyles.extraIcon}`} /> Privacy Policy
                     </a>
                   </Link>
                 </li>
@@ -340,7 +338,7 @@ const Footer = () => {
           </Row>
         </Container>
       </div>
-      <div className="footer-copyright text-right py-3 pt-4 pb-4" id={footerStyles.bottomFooter}>
+      <div className="footer-copyright text-right py-3" id={footerStyles.bottomFooter}>
         <div className="mr-4 pr-4 ml-4 pl-4">
           <Container fluid>
             <Row>
@@ -351,7 +349,7 @@ const Footer = () => {
               </Col>
               <Col className="text-left">
                 <div>
-                  <Button type="submit" variant="contained" className="mr-sm-2" id={footerStyles.orangeFooterButton} component="span" onClick={handleClickOpen}>
+                  <Button type="submit" variant="contained" disableElevation className="mr-sm-2" id={footerStyles.orangeFooterButton} component="span" onClick={handleClickOpen}>
                     Join now
                   </Button>
                   <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
@@ -385,19 +383,36 @@ const Footer = () => {
                       <Col>
                         <TextField type="password" variant="outlined" margin="dense" id="password" label="Password" fullWidth />
                       </Col>
+                      <Row>
+                        <Col className="ml-4 mr-4 pl-4 pr-4 mt-2 text-center">
+                          By signing up, you agree to our{" "}
+                          <Link href="/#">
+                            <a target="_blank" className="link">
+                              {" "}
+                              Terms of Service{" "}
+                            </a>
+                          </Link>{" "}
+                          and acknowledge our{" "}
+                          <Link href="/#">
+                            <a target="_blank" className="link">
+                              Privacy Policy.
+                            </a>
+                          </Link>
+                        </Col>
+                      </Row>
                     </DialogContent>
                     <DialogActions>
-                      <Button onClick={handleClose} color="primary">
+                      <Button onClick={handleClose} color="primary" disableElevation>
                         Cancel
                       </Button>
-                      <Button onClick={handleClose} color="primary">
+                      <Button onClick={handleClose} color="primary" disableElevation>
                         Subscribe
                       </Button>
                     </DialogActions>
                   </Dialog>
                 </div>
               </Col>
-              <Col className="pr-4 mr-4" id={footerStyles.bottomFooter}>
+              <Col className="pr-4 mr-4 pt-2" id={footerStyles.bottomFooter}>
                 <h6>
                   &copy; {new Date().getFullYear()}{" "}
                   <Link href="#">

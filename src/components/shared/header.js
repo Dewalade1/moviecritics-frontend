@@ -118,12 +118,14 @@ function Header () {
           </IconButton>
           <Divider orientation="vertical" flexItem />
           <div className="mr-4 pr-4">
-            <Button className="ml-sm-2">
+            <Button className="ml-sm-2" disableElevation>
               <TurnedInNotRoundedIcon /> Watchlist
             </Button>
-            <Button className="ml-sm-4">Login</Button>
+            <Button className="ml-sm-4" disableElevation>
+              Login
+            </Button>
             <ThemeProvider theme={theme}>
-              <Button variant="contained" className={`${styles.orangeButton} mr-4 ml-4`} color="primary" component="span">
+              <Button variant="contained" disableElevation className={`${styles.orangeButton} mr-4 ml-4`} color="primary" component="span">
                 Sign up
               </Button>
             </ThemeProvider>

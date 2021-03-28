@@ -13,12 +13,12 @@
 
 #orangeFooterButton {
     background: #FF8C00;
-    color: #d6dbef;
+    color: #ffffff;
 }
 
 #orangeFooterButton:hover {
     background: #d37708;
-    color: #e4e9fd;
+    color: #d7dcef;
 }
 
 .title {
