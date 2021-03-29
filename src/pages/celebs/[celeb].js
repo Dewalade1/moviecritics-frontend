@@ -144,24 +144,21 @@ export default function Celebs({celeb, otherCelebs}) {
               </Card>
             </Col>
             <Col md={3}>
-              <Card className="mb-4" style={{ height: "64em" }} variant="outlined">
+              <Card className="long-card mb-4" variant="outlined">
                 <CardHeader title="Other Celebrities" className="orange-color" />
+                <CardContent>
                   {otherCelebs
                     ? otherCelebs.map((others) => {
                         <Link href={`/celebs/${others.url}`}>
-                          <a>
-                            <Card key={others.id} variant="outlined">
-                              <CardHeader title={others.name} />
-                              <CardContent>
-                                <Typography variant="body1" color="text-secondary" className="pt-4 mb-4" component="p" minheight={900}>
-                                  {others.name}
-                                </Typography>
-                              </CardContent>
-                            </Card>
+                          <a key={others.id}>
+                            <Typography variant="body1" color="text-secondary" className="pt-4 mb-4" component="p" minheight={900}>
+                              {others.name}
+                            </Typography>
                           </a>
                         </Link>;
                       })
                     : ""}
+                </CardContent>
               </Card>
             </Col>
           </Row>

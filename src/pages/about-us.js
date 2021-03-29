@@ -7,6 +7,7 @@ import { Row, Col } from "react-bootstrap";
 import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
+import CardActions from "@material-ui/core/CardActions";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
@@ -16,6 +17,10 @@ const useStyles = makeStyles({
     borderTopWidth: 5,
     borderTopStyle: "solid",
     borderTopColor: "#f38704",
+  },
+  cardActionArea: {
+    width: 130,
+    height: 50,
   },
   orangeButton: {
     background: "#FF8C00",
@@ -49,21 +54,23 @@ export default function AboutUs () {
           <p className="paragraph-font mt-2">Pellentesque diam volutpat commodo sed egestas egestas fringilla. Lectus nulla at volutpat diam ut venenatis tellus in metus. Scelerisque varius morbi enim nunc faucibus a. Pulvinar neque laoreet suspendisse interdum consectetur. Turpis egestas pretium aenean pharetra magna. Vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt. Risus nullam eget felis eget nunc. Aenean sed adipiscing diam donec adipiscing tristique risus nec. Tellus rutrum tellus pellentesque eu tincidunt tortor aliquam nulla. Eget nullam non nisi est sit amet facilisis magna.</p>
         </div>
         <Row className="mt-4 pt-4 mb-4">
-          <Col md={3}></Col>
-          <Col md={6} className="mt-4">
-            <Card variant="outlined" className={`${classes.root} `}>
+          <Col md={2}></Col>
+          <Col md={8} className="mt-4">
+            <Card variant="outlined" className={classes.root}>
               <CardContent className="text-center pl-4 pr-4">
-                <h3 className="mt-4 pt-4 mb-4">
-                  <b>Want find out more?</b>
+                <h3 className="mt-4 pt-4 mb-4 pb-2">
+                  Want find out more?
                 </h3>
-                <p className="ml-4 mr-4">Just shoot us a message to learn more about us or drop a suggestion. We'll be sure to get in touch with you as soon as possible</p>
-                <Button className={`${classes.orangeButton} mt-4 mb-4`} variant='primary' href="/contact">
-                  Contact Us
-                </Button>
+                <p className="ml-4 mr-4 pr-4 pl-4 pb-2">Just shoot us a message to learn more about us or drop a suggestion. We'll be sure to get in touch with you as soon as possible</p>
               </CardContent>
+               <CardActions className="pl-4 pr-4 col-12 d-flex justify-content-center mb-4 pb-4">
+                    <Button className={`${classes.orangeButton} mb-4`} variant="contained" color="primary" href="/contact" disableElevation>
+                      Contact Us
+                    </Button>
+                </CardActions>
             </Card>
           </Col>
-          <Col md={4}></Col>
+          <Col md={2}></Col>
         </Row>
       </Layout>
     );

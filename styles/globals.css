@@ -54,19 +54,19 @@ a {
 
  /* COLORS */
  .orange-color {
-   color:#f38704;
+   color:#fd7e14;
  }
 
  /* BUTTONS */
 
  .orange-button {
-    background: #FF8C00;
-    color: #d6dbef;
+    background: #fd7e14;
+    color: #ffffff;
 }
 
 .orange-button:hover {
     background: #ffa753;
-    color: #e4e9fd;
+    color: #ffffff;
 }
 
 /* PARAGRAPHS */
@@ -90,11 +90,24 @@ a {
 /* LINKS */
 
 .link {
-  color: #f38704;
+  color: #fd7e14;
   text-decoration: none;
 }
 
 .link:hover {
   color: #ffa753;
   text-decoration: none;
+}
+
+/* ICONS */
+
+.large-icon {
+  height: 11em;
+  width: 11em;
+}
+
+/* CARDS */
+
+.long-card {
+  height: 64em;
 }

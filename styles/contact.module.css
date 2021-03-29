@@ -6,15 +6,3 @@
     background-size: cover;
     background-color: "#f38704";
 }
-
-/* BUTTONS */
-
- .orangeBtn {
-    background: #FF8C00;
-    color: #d6dbef;
-}
-
-.orangeBtn:hover {
-    background: #ffa753;
-    color: #e4e9fd;
-}
