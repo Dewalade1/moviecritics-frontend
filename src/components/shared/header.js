@@ -55,6 +55,14 @@ const BootstrapInput = withStyles((theme) => ({
 const useStyles = makeStyles(() => ({
   search: {
     background: "#ffffff",
+    '& label.Mui-focused': {
+      color: '#f38704',
+    },
+    '& .MuiOutlinedInput-root': {
+      '&.Mui-focused fieldset': {
+        borderColor: '#f38704',
+      },
+    },
   },
   orangeButton: {
     background: "#f38704",
@@ -62,6 +70,11 @@ const useStyles = makeStyles(() => ({
     "&:hover": {
       background: "#ffa753",
       color: "#e4e9fd",
+    },
+  },
+  transparentButton: {
+    "&:hover": {
+      color: "#f38704",
     },
   },
 }));
@@ -118,10 +131,10 @@ function Header () {
           </IconButton>
           <Divider orientation="vertical" flexItem />
           <div className="mr-4 pr-4">
-            <Button className="ml-sm-2" disableElevation>
+            <Button className={`ml-sm-2 ${styles.transparentButton}`} disableElevation>
               <TurnedInNotRoundedIcon /> Watchlist
             </Button>
-            <Button className="ml-sm-4" disableElevation>
+            <Button className={`ml-sm-4 ${styles.transparentButton}`} disableElevation>
               Login
             </Button>
             <ThemeProvider theme={theme}>

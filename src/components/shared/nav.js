@@ -39,6 +39,11 @@ const useStyles = makeStyles({
   fullList: {
     width: 'auto',
   },
+  transparentButton: {
+    "&:hover": {
+      color: "#f38704",
+    },
+  },
 });
 
 export default function MainNav () {
@@ -76,9 +81,9 @@ export default function MainNav () {
         <Nav className="mr-auto">
           <div>
             <div>
-              <Button onClick={toggleDrawer("left", true)}>
+              <Button onClick={toggleDrawer("left", true)} className={classes.transparentButton}>
                 {" "}
-                <MenuRoundedIcon /> Menu
+                <MenuRoundedIcon />{" "} Menu
               </Button>
               <Drawer anchor={"left"} open={state["left"]} onClose={toggleDrawer("left", false)}>
                 <div className={clsx(classes.list)} role="presentation" onClick={toggleDrawer("left", false)} onKeyDown={toggleDrawer("left", false)}>

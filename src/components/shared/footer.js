@@ -15,7 +15,7 @@ import TwitterLoginBtn from '../shared/logins/twitterLogin';
 import Button from "@material-ui/core/Button";
 import Dialog from '@material-ui/core/Dialog';
 import TextField from '@material-ui/core/TextField';
-import { withStyles } from '@material-ui/core/styles';
+import { withStyles, makeStyles } from '@material-ui/core/styles';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import MuiDialogTitle from '@material-ui/core/DialogTitle';
 import MuiDialogContent from '@material-ui/core/DialogContent';
@@ -61,13 +61,40 @@ const styles = (theme) => ({
   },
 });
 
+const useStyles = makeStyles(() => ({
+  signUpForm: {
+    '& label.Mui-focused': {
+      color: '#f38704',
+    },
+    '& .MuiOutlinedInput-root': {
+      '&.Mui-focused fieldset': {
+        borderColor: '#f38704',
+      },
+    },
+  },
+  emailSubscribeForm: {
+    '&:focus': {
+        borderColor: '#f38704',
+    },
+  },
+  orangeBtn: {
+    background: "#FF8C00",
+    color: "#ffffff",
+    "&:hover": {
+    background: "#ffa753",
+    color: "#ffffff",
+    },
+},
+}));
+
+
 const DialogTitle = withStyles(styles)((props) => {
   const { children, classes, onClose, ...other } = props;
   return (
     <MuiDialogTitle disableTypography className={classes.root} {...other}>
       <Typography variant="h6">{children}</Typography>
       {onClose ? (
-        <IconButton aria-label="close" className={classes.closeButton} onClick={onClose}>
+        <IconButton aria-label="close" className={`${classes.closeButton} transparent-button mr-2`} onClick={onClose}>
           <CloseIcon />
         </IconButton>
       ) : null}
@@ -89,7 +116,7 @@ const DialogActions = withStyles((theme) => ({
 }))(MuiDialogActions);
 
 const Footer = () => {
-
+  const classes = useStyles();
   const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
@@ -344,7 +371,7 @@ const Footer = () => {
             <Row>
               <Col>
                 <div inline="true">
-                  <FormControl inline="true" type="text" placeholder="Sign up for our Newsletter..." className="mr-1" />
+                  <FormControl inline="true" type="text" placeholder="Sign up for our Newsletter..." className={`mr-1 ${classes.emailSubscribeForm}`} />
                 </div>
               </Col>
               <Col className="text-left">
@@ -353,7 +380,7 @@ const Footer = () => {
                     Join now
                   </Button>
                   <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
-                    <DialogTitle id="customized-dialog-title" onClose={handleClose} inline>
+                    <DialogTitle className='ml-2' id="customized-dialog-title" onClose={handleClose} inline>
                       Sign Up
                     </DialogTitle>
                     <DialogContent dividers>
@@ -365,23 +392,28 @@ const Footer = () => {
                       </Col>
                     </DialogContent>
                     <DialogContent dividers>
-                      <DialogContentText>Or enter your details below:</DialogContentText>
+                      <DialogContentText className='ml-4'>Or enter your details below:</DialogContentText>
                       <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
                       <Col>
                         <Row>
                           <Col>
-                            <TextField autoFocus variant="outlined" margin="dense" id="first name" label="First Name" type="text" fullWidth />
+                            <TextField autoFocus className={classes.signUpForm} variant="outlined" margin="dense" id="first name" label="First Name" type="text" fullWidth />
                           </Col>
                           <Col>
-                            <TextField variant="outlined" margin="dense" id="last name" label="Last Name" type="text" fullWidth />
+                            <TextField variant="outlined" className={classes.signUpForm} margin="dense" id="last name" label="Last Name" type="text" fullWidth />
                           </Col>
                         </Row>
                       </Col>
                       <Col>
-                        <TextField variant="outlined" margin="dense" id="email" label="Email Address" type="email" fullWidth />
+                        <TextField variant="outlined" margin="dense" className={classes.signUpForm} id="email" label="Email Address" type="email" fullWidth />
                       </Col>
                       <Col>
-                        <TextField type="password" variant="outlined" margin="dense" id="password" label="Password" fullWidth />
+                        <TextField type="password" variant="outlined" margin="dense" className={classes.signUpForm} id="password" label="Password" fullWidth />
+                      </Col>
+                      <Col>
+                        <Button variant="contained" color="primary" disableElevation size="large" className={`mt-2 mb-2 ${classes.orangeBtn}`} fullWidth>
+                          Sign Up
+                        </Button>
                       </Col>
                       <Row>
                         <Col className="ml-4 mr-4 pl-4 pr-4 mt-2 text-center">
@@ -401,11 +433,11 @@ const Footer = () => {
                         </Col>
                       </Row>
                     </DialogContent>
-                    <DialogActions>
-                      <Button onClick={handleClose} color="primary" disableElevation>
+                    <DialogActions className='mr-4'>
+                      <Button className='transparent-button' onClick={handleClose} color="primary" disableElevation>
                         Cancel
                       </Button>
-                      <Button onClick={handleClose} color="primary" disableElevation>
+                      <Button className='transparent-button' onClick={handleClose} color="primary" disableElevation>
                         Subscribe
                       </Button>
                     </DialogActions>

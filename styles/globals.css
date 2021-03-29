@@ -69,6 +69,10 @@ a {
     color: #ffffff;
 }
 
+.transparent-button:hover {
+    color: #f38704;
+  },
+
 /* PARAGRAPHS */
 
 .paragraph-font {
