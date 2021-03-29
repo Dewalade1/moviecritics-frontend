@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
 
 import Link from 'next/link';
 
@@ -11,6 +11,8 @@ import AppleLoginBtn from '../shared/logins/appleLogin';
 import GoogleLoginBtn from '../shared/logins/googleLogin';
 import FacebookLoginBtn from '../shared/logins/facebookLogin';
 import TwitterLoginBtn from '../shared/logins/twitterLogin';
+
+import DispatchContext from '../contexts/dispatchContext';
 
 import Button from "@material-ui/core/Button";
 import Dialog from '@material-ui/core/Dialog';
@@ -118,6 +120,7 @@ const DialogActions = withStyles((theme) => ({
 const Footer = () => {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
+  const appDispatch = useContext(DispatchContext);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -126,6 +129,11 @@ const Footer = () => {
   const handleClose = () => {
     setOpen(false);
   };
+
+  const handleListItemClick = (event, index) => {
+      appDispatch({type: "changeNavSelectedIndex", index: index});
+  };
+
 
   return (
     <footer className={`font-small pt-4 mt-4`} id={footerStyles.footer}>
@@ -178,7 +186,7 @@ const Footer = () => {
               <ul>
                 <li className="list-unstyled ">
                   <Link href="/">
-                    <a className={footerStyles.link}>
+                    <a className={footerStyles.link} onClick={(event) => handleListItemClick(event, 0)}>
                       {" "}
                       <HomeOutlinedIcon className={`ml-1 mr-1 ${footerStyles.quickLinksIcon}`} />
                       Home
@@ -187,7 +195,7 @@ const Footer = () => {
                 </li>
                 <li className="list-unstyled ">
                   <Link href="/about-us">
-                    <a className={footerStyles.link}>
+                    <a className={footerStyles.link} onClick={(event) => handleListItemClick(event, 4)}>
                       {" "}
                       <InfoOutlinedIcon className={`ml-1 mr-1 ${footerStyles.quickLinksIcon}`} />
                       About Us
@@ -195,7 +203,7 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li className="list-unstyled ">
-                  <Link href="/celebs/celebs">
+                  <Link href="/celebs/celebs" onClick={(event) => handleListItemClick(event, 2)}>
                     <a className={footerStyles.link}>
                       {" "}
                       <PeopleOutlinedIcon className={`ml-1 mr-1 ${footerStyles.quickLinksIcon}`} />
@@ -204,7 +212,7 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li className="list-unstyled ">
-                  <Link href="/genre">
+                  <Link href="/genre" onClick={(event) => handleListItemClick(event, 1)}>
                     <a className={footerStyles.link}>
                       {" "}
                       <BarChartRoundedIcon className={`ml-1 mr-1 ${footerStyles.quickLinksIcon}`} />
@@ -219,25 +227,25 @@ const Footer = () => {
               <ul>
                 <li className="list-unstyled ">
                   <Link href="/app/android">
-                    <a className={footerStyles.link}>
+                    <a className={footerStyles.link} onClick={(event) => handleListItemClick(event, 5)}>
                       {" "}
-                      <PhoneAndroidIcon className={`ml-1 mr-1 ${footerStyles.ourAppsIcon}`} />
+                      <PhoneAndroidIcon className={`ml-1 mr-1 ${footerStyles.ourAppsIcon}`}/>
                       Android App
                     </a>
                   </Link>
                 </li>
                 <li className="list-unstyled ">
                   <Link href="/app/ios">
-                    <a className={footerStyles.link}>
+                    <a className={footerStyles.link} onClick={(event) => handleListItemClick(event, 5)}>
                       {" "}
-                      <PhoneIphoneIcon className={`ml-1 mr-1 ${footerStyles.ourAppsIcon}`} />
+                      <PhoneIphoneIcon className={`ml-1 mr-1 ${footerStyles.ourAppsIcon}`}/>
                       Ios App
                     </a>
                   </Link>
                 </li>
                 <li className="list-unstyled ">
                   <Link href="/app/desktop">
-                    <a className={footerStyles.link}>
+                    <a className={footerStyles.link} onClick={(event) => handleListItemClick(event, 6)}>
                       {" "}
                       <DesktopMacIcon className={`mr-1 ${footerStyles.ourAppsIcon}`} /> Desktop Apps
                     </a>
@@ -251,7 +259,7 @@ const Footer = () => {
               <ul>
                 <li className="list-unstyled ">
                   <Link href="/tops/movies">
-                    <a className={footerStyles.link}>
+                    <a className={footerStyles.link} onClick={(event) => handleListItemClick(event, 3)}>
                       <TheatersOutlinedIcon className={`mr-1 ${footerStyles.topsIcon}`} />
                       Top Movies
                     </a>
@@ -259,7 +267,7 @@ const Footer = () => {
                 </li>
                 <li className="list-unstyled ">
                   <Link href="/tops/celebs">
-                    <a className={footerStyles.link}>
+                    <a className={footerStyles.link} onClick={(event) => handleListItemClick(event, 3)}>
                       <AccountCircleOutlinedIcon className={`mr-1 ${footerStyles.topsIcon}`} />
                       Top Celebs
                     </a>
@@ -267,7 +275,7 @@ const Footer = () => {
                 </li>
                 <li className="list-unstyled ">
                   <Link href="/tops/genres">
-                    <a className={footerStyles.link}>
+                    <a className={footerStyles.link} onClick={(event) => handleListItemClick(event, 3)}>
                       <BarChartRoundedIcon className={`mr-1 ${footerStyles.topsIcon}`} />
                       Top Genres
                     </a>
@@ -281,15 +289,15 @@ const Footer = () => {
               <ul>
                 <li className="list-unstyled ">
                   <Link href="/movies/yoruba">
-                    <a className={footerStyles.link}>
-                      <RemoveFromQueueOutlinedIcon className={`mr-2 ${footerStyles.moviesIcon}`} />
+                    <a className={footerStyles.link} onClick={(event) => handleListItemClick(event, 1)}>
+                      <RemoveFromQueueOutlinedIcon className={`mr-2 ${footerStyles.moviesIcon}`}/>
                       Yoruba
                     </a>
                   </Link>
                 </li>
                 <li className="list-unstyled ">
                   <Link href="/movies/igbo">
-                    <a className={footerStyles.link}>
+                    <a className={footerStyles.link} onClick={(event) => handleListItemClick(event, 1)}>
                       <AddToQueueOutlinedIcon className={`mr-2 ${footerStyles.moviesIcon}`} />
                       Igbo
                     </a>
@@ -297,7 +305,7 @@ const Footer = () => {
                 </li>
                 <li className="list-unstyled ">
                   <Link href="/movies/hausa">
-                    <a className={footerStyles.link}>
+                    <a className={footerStyles.link} onClick={(event) => handleListItemClick(event, 1)}>
                       <PersonalVideoOutlinedIcon className={`mr-2 ${footerStyles.moviesIcon}`} />
                       Hausa
                     </a>
@@ -305,7 +313,7 @@ const Footer = () => {
                 </li>
                 <li className="list-unstyled ">
                   <Link href="/movies/christian">
-                    <a className={footerStyles.link}>
+                    <a className={footerStyles.link} onClick={(event) => handleListItemClick(event, 1)}>
                       <TvOutlinedIcon className={`mr-2 ${footerStyles.moviesIcon}`} />
                       Christian
                     </a>
@@ -313,7 +321,7 @@ const Footer = () => {
                 </li>
                 <li className="list-unstyled ">
                   <Link href="/movies/islamic">
-                    <a className={footerStyles.link}>
+                    <a className={footerStyles.link} onClick={(event) => handleListItemClick(event, 1)}>
                       <OndemandVideoOutlinedIcon className={`mr-2 ${footerStyles.moviesIcon}`} />
                       Islamic
                     </a>
