@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { withStyles } from "@material-ui/core/styles";
+import { withStyles, makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
 import MuiDialogTitle from "@material-ui/core/DialogTitle";
@@ -28,13 +28,26 @@ const DialogTitle = withStyles(styles)((props) => {
     <MuiDialogTitle disableTypography className={classes.root} {...other}>
       <Typography variant="h6">{children}</Typography>
       {onClose ? (
-        <IconButton aria-label="close" className={classes.closeButton} onClick={onClose}>
+        <IconButton aria-label="close" className={`${classes.closeButton} ${classes.transparentBtn} ml-4`} onClick={onClose}>
           <CloseIcon />
         </IconButton>
       ) : null}
     </MuiDialogTitle>
   );
 });
+
+const useStyles = makeStyles(() => ({
+  transparentBtn: {
+    color: "#fd7e14",
+    "&:hover": {
+      color: "#f38704",
+    },
+  },
+  orangeColor: {
+    color: "#fd7e14",
+  }
+}));
+
 
 const DialogContent = withStyles((theme) => ({
   root: {
@@ -50,6 +63,7 @@ const DialogActions = withStyles((theme) => ({
 }))(MuiDialogActions);
 
 export default function DialogBtn( { btnData, celebData }) {
+  const styles = useStyles()
   const [btnOpen, setBtnOpen] = useState(false);
 
   const handleClickOpen = () => {
@@ -61,20 +75,20 @@ export default function DialogBtn( { btnData, celebData }) {
 
   return (
     <div className={btnData.position == "right" ? "col-12 d-flex justify-content-end pr-4" : "col-12 d-flex"}>
-      <Button size="small" color="primary" onClick={handleClickOpen} style={{ color: "#FF8C00" }}>
+      <Button size="medium" color="primary" onClick={handleClickOpen} className={styles.transparentBtn}>
         {btnData.btnText}
       </Button>
       <Dialog onClose={handleClose} aria-labelledby="max-width-dialog-title" open={btnOpen} fullWidth={btnData.fullWidth} maxWidth={btnData.maxWidth}>
-        <DialogTitle id="max-width-dialog-title" onClose={handleClose} style={{ color: "#FF8C00" }}>
+        <DialogTitle className="pl-4 ml-4 pr-4 mr-4" id="max-width-dialog-title" onClose={handleClose} className={styles.orangeColor}>
           {celebData.name + "'s Bio"}
         </DialogTitle>
         <DialogContent dividers>
-          <Typography gutterBottom>{celebData.bio}</Typography>
+          <Typography gutterBottom className="pr-4 pl-4 ml-4 mr-4 justify-content-center">{celebData.bio}</Typography>
         </DialogContent>
 
         {btnData.dialogFooterBtn ? (
           <DialogActions>
-            <Button autoFocus onClick={handleClose} color="primary" style={{ color: "#FF8C00" }}>
+            <Button autoFocus onClick={handleClose} color="primary" className={styles.transparentBtn}>
               Cancel
             </Button>
           </DialogActions>

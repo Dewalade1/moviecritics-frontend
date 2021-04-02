@@ -69,6 +69,10 @@ a {
     color: #ffffff;
 }
 
+.transparent-button {
+    color: #fd7e14;
+  },
+
 .transparent-button:hover {
     color: #f38704;
   },

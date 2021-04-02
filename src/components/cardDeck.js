@@ -50,7 +50,7 @@ export default function MyCardDeck ( {cardData} ) {
             <Card.Body className="text-center pb-1">
               <Card.Title style={{ height: "30px" }}>
                 <Link href="#!">
-                  <a className="orange-color">
+                  <a className="link">
                     <h6>{tile.fields.title}</h6>
                   </a>
                 </Link>
@@ -62,10 +62,10 @@ export default function MyCardDeck ( {cardData} ) {
                 </Box>
               </Card.Text>
               <div>
-                <Button className={`mt-sm-2 ${styles.orangeButton}`} variant="light" fullWidth>
+                <Button className={`mt-sm-2 ${styles.orangeButton}`} variant="contained" disableElevation fullWidth>
                   <AddBoxOutlinedIcon className="mr-sm-2" /> Watchlist
                 </Button>
-                <Button href={tile.fields.url} variant="light" fullWidth className={`${styles.greyButton} mt-sm-2 mb-sm-2`}>
+                <Button href={tile.fields.url} disableElevation fullWidth className={`${styles.greyButton} mt-sm-2 mb-sm-2`}>
                   <PlayArrowRoundedIcon className="mr-sm-2" /> Trailer
                 </Button>
               </div>
