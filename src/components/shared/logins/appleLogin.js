@@ -1,16 +1,30 @@
- import React from 'react';
+import React from 'react';
 import AppleIcon from '@material-ui/icons/Apple';
 
 import Button from "@material-ui/core/Button";
+import { makeStyles } from "@material-ui/core/styles";
  
-const responseFacebook = (response) => {
-  console.log(response);
-}
- 
+const responseApple = (res) => {
+  console.log(res);
+};
+
+const useStyles = makeStyles(() => ({
+  loginBtn: {
+    backgroundColor: "#000000",
+    color: "#ffffff",
+    "&:hover": {
+      backgroundColor: "#474747",
+    },
+  },
+}));
+
 export default function AppleLoginBtn () {
-    return(
-        <Button fullWidth className="btn btn-apple" variant="contained" className=" mb-2" style={{background: "#000000", color: "#ffffff"}}>
-            <AppleIcon/> <span className="ml-2"> Sign Up with Apple </span>
-        </Button>
-    )
+
+  const styles = useStyles();
+
+    return (
+      <Button fullWidth disableElevation className={`${styles.loginBtn} mb-2`} variant="contained">
+        <AppleIcon /> <span className="ml-2"> Sign Up with Apple </span>
+      </Button>
+    );
 };

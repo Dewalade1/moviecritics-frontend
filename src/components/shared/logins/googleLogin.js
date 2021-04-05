@@ -1,5 +1,4 @@
 import React, {useEffect} from 'react';
-import ReactDOM from 'react-dom';
 
 import { loadCSS } from 'fg-loadcss';
 
@@ -11,8 +10,16 @@ import { GoogleLogin } from 'react-google-login';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    '& > .fa': {
+    "& > .fa": {
       margin: theme.spacing(2),
+    },
+  },
+  loginBtn: {
+    backgroundColor: "#4c8bf5",
+    color: "#ffffff",
+    "&:hover": {
+      backgroundColor: "#4279d5",
+      color: "#ffffff",
     },
   },
 }));
@@ -22,7 +29,7 @@ const responseGoogle = (response) => {
 }
 
 export default function GoogleLoginBtn () {
-    const classes = useStyles();
+    const styles = useStyles();
 
     useEffect(() => {
     const node = loadCSS(
@@ -35,17 +42,18 @@ export default function GoogleLoginBtn () {
     };
   }, []);
 
-    return(
-         <GoogleLogin
-            render={renderProps => (
-                <Button fullWidth variant="outlined" component="span" onClick={renderProps.onClick} style={{ background: "#4c8bf5", color: "white" }}>
-                    <Icon className="fab fa-google" style={{ color: "white" }}/> <span className="ml-2"> Sign Up with Google </span>
-                 </Button>
-            )}
+    return (
+      <GoogleLogin
+        render={(renderProps) => (
+          <Button fullWidth variant="outlined" disableElevation component="span" onClick={renderProps.onClick} className={styles.loginBtn}>
+            <Icon className="fab fa-google" fontSize="small" /> <span className="ml-2"> Sign Up with Google </span>
+          </Button>
+        )}
+        className="mt-8 mb-4"
         clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
         buttonText="Sign up with Google"
         onSuccess={responseGoogle}
         onFailure={responseGoogle}
-        cookiePolicy={'single_host_origin'}
-    />
-)};
+        cookiePolicy={"single_host_origin"}
+      />
+    );};

@@ -73,9 +73,13 @@ export default function MainNav () {
 
     return (
       <>
-        <Navbar.Brand href="/" onclick={(event) => handleListItemClick(event, 0)}>
+        <Navbar.Brand>
           <div className="ml-4 pl-4">
-            <img src="https://res.cloudinary.com/hellodewa/image/upload/v1616559517/Moviecritics/images/logos/moviecritics-logo-transparent-background_sjnfhk.png" width={140} height={40} className="d-inline-block align-top" />
+            <Link href="/">
+              <a onClick={(event) => handleListItemClick(event, 0)}>
+                <img src="https://res.cloudinary.com/hellodewa/image/upload/v1616559517/Moviecritics/images/logos/moviecritics-logo-transparent-background_sjnfhk.png" width={140} height={40} className="d-inline-block align-top" />
+              </a>
+            </Link>
           </div>
         </Navbar.Brand>
         <Nav className="mr-auto">
@@ -88,15 +92,15 @@ export default function MainNav () {
               <Drawer anchor={"left"} open={state["left"]} onClose={toggleDrawer("left", false)}>
                 <div className={clsx(classes.list)} role="presentation" onClick={toggleDrawer("left", false)} onKeyDown={toggleDrawer("left", false)}>
                   <List component="nav" aria-label="app logo">
-                    <ListItem>
-                      <div className="ml-sm-6 pb-2 pt-4">
-                        <Link href="/">
-                          <a onclick={(event) => handleListItemClick(event, 0)}>
+                    <Link href="/">
+                      <a onClick={(event) => handleListItemClick(event, 0)}>
+                        <ListItem>
+                          <div className="ml-sm-6 pb-2 pt-4">
                             <img src="https://res.cloudinary.com/hellodewa/image/upload/v1616559517/Moviecritics/images/logos/moviecritics-logo-transparent-background_sjnfhk.png" width={140} height={40} className="d-inline-block align-top" />
-                          </a>
-                        </Link>
-                      </div>
-                    </ListItem>
+                          </div>
+                        </ListItem>
+                      </a>
+                    </Link>
                   </List>
                   <Divider />
                   <List
