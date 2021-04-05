@@ -150,14 +150,14 @@ const Footer = () => {
             <Col md="2" className="text-left mt-4 pt-2">
               <ul>
                 <li className="list-unstyled ">
-                  <Link href="/privacy-policy">
+                  <Link href="/legal/privacy">
                     <a className={footerStyles.link}>
                       <SecurityIcon className={`ml-1 ${footerStyles.extraIcon}`} /> Privacy Policy
                     </a>
                   </Link>
                 </li>
                 <li className="list-unstyled ">
-                  <Link href="/terms">
+                  <Link href="/legal/terms">
                     <a className={footerStyles.link}>
                       <DescriptionRoundedIcon className={`ml-1 ${footerStyles.extraIcon}`} /> Terms
                     </a>
