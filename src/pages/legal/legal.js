@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Tabs from '@material-ui/core/Tabs';
@@ -6,9 +6,10 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 
-import Layout from "./layout";
+import Layout from "../../layouts/layout";
 
-import Privacy from '../pages/legal/privacy';
+import Privacy from './privacy';
+import Terms from './terms';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -48,60 +49,55 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
     display: 'flex',
-    minHeight: 224,
+    height: 1200,
   },
   tabs: {
     borderRight: `1px solid ${theme.palette.divider}`,
+    minWidth: '24%',
   },
+  'PrivateTabIndicator-root-3': {
+      color: '#fd7e14',
+  }
 }));
 
 export default function VerticalTabs() {
   const classes = useStyles();
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
   return (
-    <div className={classes.root}>
+      <Layout>
+    <div className={`${classes.root} ml-4 pl-4 mr-4 pr-4`}>
       <Tabs
         orientation="vertical"
         variant="scrollable"
         value={value}
+        indicatorColor="secondary"
         onChange={handleChange}
-        aria-label="Vertical tabs example"
+        aria-label="legal-tab"
         className={classes.tabs}
       >
-        <Tab label="Item One" {...a11yProps(0)} />
-        <Tab label="Item Two" {...a11yProps(1)} />
-        <Tab label="Item Three" {...a11yProps(2)} />
-        <Tab label="Item Four" {...a11yProps(3)} />
-        <Tab label="Item Five" {...a11yProps(4)} />
-        <Tab label="Item Six" {...a11yProps(5)} />
-        <Tab label="Item Seven" {...a11yProps(6)} />
+        <Tab label="Privacy Policy" {...a11yProps(0)}  id='privacy'/>
+        <Tab label="Our Terms" {...a11yProps(1)}  id='terms'/>
+        <Tab label="Trademarks and Brand Use Policy" {...a11yProps(2)} />
+        <Tab label="Licences" {...a11yProps(3)} />
       </Tabs>
       <TabPanel value={value} index={0}>
-        <Privacy id='privacy'/>
+        <Privacy/>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Item Two
+        <Terms/>
       </TabPanel>
       <TabPanel value={value} index={2}>
         Item Three
       </TabPanel>
-      <TabPanel value={value} index={3}>
+       <TabPanel value={value} index={3}>
         Item Four
       </TabPanel>
-      <TabPanel value={value} index={4}>
-        Item Five
-      </TabPanel>
-      <TabPanel value={value} index={5}>
-        Item Six
-      </TabPanel>
-      <TabPanel value={value} index={6}>
-        Item Seven
-      </TabPanel>
     </div>
+  </Layout>
   );
 }

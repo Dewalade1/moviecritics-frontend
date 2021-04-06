@@ -1,7 +1,12 @@
 import React from "react";
 
-import Layout from "../../layouts/layout";
+// import Layout from "../../layouts/layout";
+// import LegalLayout from "../../layouts/legalLayout";
 
 export default function Privacy() {
-  return <Layout></Layout>;
+  return (
+    <>
+        <h3 className='orange-color'>General Privacy Information</h3>
+    </>
+  );
 }

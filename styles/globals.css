@@ -107,6 +107,16 @@ a {
   text-decoration: none;
 }
 
+.legal-nav-link {
+  color: #000000;
+  text-decoration: none;
+}
+
+.legal-nav-link:hover {
+  color: #ffa753;
+  text-decoration: none;
+}
+
 /* ICONS */
 
 .large-icon {
