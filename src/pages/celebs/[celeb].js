@@ -54,6 +54,8 @@ export default function Celebs({celeb, otherCelebs}) {
     
   return (
     <Layout>
+      <div className="ml-4 pl-4 mr-4 pr-4 mt-lg-4 pt-2">
+        <div className="ml-4 pl-4 mr-4 pr-4 mt-lg-4 pt-4">
       {Boolean(celeb) ? (
         <div className="pl-4 pr-4 mb-4">
           <Row>
@@ -166,6 +168,8 @@ export default function Celebs({celeb, otherCelebs}) {
       ) : (
         ""
       )}
+      </div>
+      </div>
     </Layout>
   );
 }

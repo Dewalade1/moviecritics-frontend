@@ -21,6 +21,8 @@ export default function Home({celebs, carouselData}) {
 
   return (
     <Layout>
+      <div className="ml-4 pl-4 mr-4 pr-4 mt-lg-4 pt-2">
+        <div className="ml-4 pl-4 mr-4 pr-4 mt-lg-4 pt-4">
       <Card className={`text-center ${classes.root}`}  variant="outlined" id="main-carouselgit">
         <MyCarousel tileData={carouselData} home />
       </Card>
@@ -39,6 +41,8 @@ export default function Home({celebs, carouselData}) {
             </Card>
         </Col>
       </Row>
+      </div>
+      </div>
     </Layout>
   );
 }

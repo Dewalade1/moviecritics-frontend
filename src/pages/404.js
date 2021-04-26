@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    height: `100%`,
+    height: '100%',
   },
 }))
 
@@ -28,7 +28,9 @@ const PageNotFound = () => {
 
   return (
     <Layout>
-      <div className=" text-left">
+      <div className="ml-4 pl-4 mr-4 pr-4 mt-lg-4 pt-2">
+        <div className="ml-4 pl-4 mr-4 pr-4 mt-lg-4 pt-4">
+      <div className="mt-2 text-left">
         <Link aria-label="home" href="/">
             <a className="link">
             <ArrowBackRoundedIcon />{" "} <span>Back to Home </span>
@@ -42,6 +44,8 @@ const PageNotFound = () => {
             </b>
           </Typography>
         </div>
+      </div>
+      </div>
     </Layout>
   )
 }

@@ -123,6 +123,8 @@ export default function Contact () {
     return (
       <div id={styles.contactLayout}>
         <Layout>
+            <div className="ml-4 pl-4 mr-4 pr-4 mt-lg-4 pt-2">
+            <div className="ml-4 pl-4 mr-4 pr-4 mt-lg-4 pt-4">
           <Row>
             <Col md={3}></Col>
             <Col md={6}>
@@ -200,6 +202,8 @@ export default function Contact () {
             </Col>
             <Col md={3}></Col>
           </Row>
+          </div>
+          </div>
         </Layout>
       </div>
     );

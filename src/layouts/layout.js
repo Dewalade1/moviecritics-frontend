@@ -39,10 +39,8 @@ export default function Layout({ children }) {
         <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;500;600;700&display=swap" rel="stylesheet" />
       </Head>
 
-      <Header />
-      <div className="ml-4 pl-4 mr-4 pr-4 mt-lg-4 pt-4">
-        <main className="ml-4 pl-4 mr-4 pr-4 mt-lg-4 pt-4">{children}</main>
-      </div>
+      <Header />  
+      <main>{children}</main>
       <Tools/>
       <Footer />
     </>
