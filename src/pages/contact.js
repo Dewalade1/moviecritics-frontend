@@ -127,8 +127,8 @@ export default function Contact () {
             <div className="ml-4 pl-4 mr-4 pr-4 mt-lg-4 pt-4">
           <Row>
             <Col md={3}></Col>
-            <Col md={6}>
-                 <Card variant="outlined" className={classes.cardRoot}>
+            <Col md={6} className='pt-4'>
+                 <Card variant="outlined" className={`${classes.cardRoot} mt-4`}>
 
                 {state.messageSent ? (
                 <>
